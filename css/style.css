@@ -1,0 +1,536 @@
+/*=======================
+         fonts
+=======================*/
+/* place holder first */
+@font-face {
+    font-family: Gloock_Font;
+    src: url("../font/Gloock-Regular.woff");
+}
+
+/*============================
+        * & elements 
+=============================*/
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color: #2F3E46;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* make sure no horizontal over fill */
+html, body{
+    max-width: 100%;
+}
+
+body{
+    background-color:transparent;
+}
+
+button{
+    background-color: transparent;
+    border:none;
+}
+
+img {
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.85);
+}
+
+/* ======================
+            menus
+========================*/
+.menuGrid{
+    display: grid;
+    grid-template-columns: repeat(2,auto) 3fr;
+    max-height: min-content;
+    padding: 2vh 2vw;
+    background-color:#F7FBFC;
+    border-bottom: 2px solid #2F3E46;
+}
+
+/* logo */
+.menuGrid div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menuGrid img{
+    max-height: 25vh;
+    width: auto;
+    box-shadow: none;
+}
+
+/* name */
+.menuGrid div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end   ;
+}
+
+.menuGrid div:nth-child(2)>*{
+    text-align: left;
+    font-size: 1.75vw;
+    font-family: Gloock_Font;
+}
+
+
+/* nav bar */
+.menuGrid nav{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    align-items: end;
+}
+
+.menuGrid>nav>button{
+    min-height: 4vh;
+    width: auto;
+}
+
+.menuGrid>nav>button>a{
+    font-size:1vw;
+}
+
+/* ======================
+            HOME
+========================*/
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url('../image/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter: blur(4px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+main{
+    min-height: 100vh;
+    background-color: transparent;
+}
+
+/*============================
+            FOOTER  
+=============================*/
+footer {
+    border-top: 2px solid #2F3E46;
+    background-color: #F7FBFC;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    max-width: 100vw;
+    padding-top: 1rem;
+}
+footer img{
+    border:none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* specific grid pos */
+footer>div:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1/span 2;
+    text-align: left;
+}
+
+footer>div:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 1/span 2;
+    text-align: left;
+}
+
+footer>div:nth-of-type(4) {
+    grid-column: 4;
+    grid-row: 1/span 2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+footer>div:nth-of-type(4)>div{
+    display: flex;
+    justify-content:flex-start;
+}
+
+footer>div:nth-of-type(3)>img {
+    height: 15vh;
+    width: auto;
+}
+
+footer>h6 {
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: center;
+}
+
+footer>.logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+}
+
+footer img {
+    width: 7.5vw;
+}
+
+footer nav {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    row-gap: 1rem;
+}
+
+footer button {
+    text-align: left;
+    font-size: 0.75vw;
+    border: none;
+    color: #2F3E46;
+}
+
+/* nav for diff page of the website*/
+footer button:nth-of-type(1) {
+    grid-row: 1;
+}
+
+footer button:nth-of-type(2) {
+    grid-row: 2;
+}
+
+footer button:nth-of-type(3) {
+    grid-row: 3;
+}
+
+footer>div>h4{
+    padding: 1vh 0vw;
+    font-size: 1.25vw;
+}
+
+
+/* ======================
+         ccs tile
+========================*/
+.Logo {
+    width: 75px;
+    height: 75px;
+    background-image: url('../image/socialSprites.jpg');
+    background-repeat: no-repeat;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.web {
+    background-position: 0 0;
+}
+
+.fb {
+    background-position: -75px 0;
+}
+
+.ig {
+    background-position: -150px 0;
+}
+
+
+/* ======================
+        home article
+========================*/
+#home {
+    background-color: transparent;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 0%;
+}
+
+#home>div:nth-child(1){
+    min-height: 105vh;
+    display: grid;
+    grid-template-rows: 3fr 1fr 1fr;
+    text-align: center;
+    place-items: center;
+}
+
+#home>div:nth-child(1)>h1{
+    text-align: center;
+    align-self: self-end;
+    font-size: 10vw;
+}
+
+#home>div:nth-child(1)>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 100vw;
+    min-width: 90vw;
+}
+#home>div:nth-child(1) a{
+    font-size: 2vw;
+    border:solid 5px #2F3E46;
+    border-radius: 3vw;
+    min-width: 20vw;
+    text-decoration: none;
+    background-color: #f8fafc2e;
+}
+
+
+#massSchedule h1, #holyHour h1, #confessionSch h1{
+    grid-row: 1;
+    grid-column: 1/span 2;
+    text-align: center;
+    max-height: fit-content;
+    font-size: 4.5vw;
+    padding: 2vh 2vw;
+}
+/* ======================
+         mass schedule
+========================*/
+#massSchedule{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: min-content auto;
+    min-height:150vh;
+    background-color: #F8FAFC;
+    max-width: 100vw;
+    padding: 5vh 0vw;
+}
+
+
+#massSchedule>div:nth-of-type(1){
+    grid-row: 2;
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,auto);
+    padding: 2vh 2vw;
+    row-gap: 5vh;
+    border-right: 6px solid #2F3E46;
+}
+/* images */
+#massSchedule>div:nth-of-type(1)>div:nth-child(1){
+    grid-row: 1/span 2;
+    grid-column: 1/span 2;
+}
+
+#massSchedule>div:nth-of-type(1)>div:nth-child(2){
+    grid-row: 1 / span 2;
+    grid-column: 3 / span 2;
+    align-self: center;
+}
+#massSchedule>div:nth-of-type(1)>div:nth-child(3){
+    grid-row:2/span 2 ;
+    grid-column: 1/span 4;
+    align-self:self-end;
+    justify-self: center;
+}
+
+#massSchedule>div:nth-of-type(1)>div:nth-child(1)>img{
+    max-width: 35vw;
+    height: auto;
+}
+
+#massSchedule>div:nth-of-type(1)>div:nth-child(2)>img{
+    max-height: 50vh;
+}
+#massSchedule>div:nth-of-type(1)>div:nth-child(3)>img{
+    max-width: 40vw;
+}
+
+/* details */
+#massSchedule>div:nth-of-type(2){
+    grid-row: 2;
+    grid-column: 2;
+    padding: 0vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#massSchedule h3{
+    font-size: 2vw;
+    padding-top: 5vh;
+}
+
+#massSchedule p{
+    font-size: 1.5vw;
+}
+
+#massSchedule>div:nth-of-type(2)>div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: min-content min-content;
+    border:3px solid #2F3E46;
+    border-radius: 8px;
+    padding:0.5vh 2vw;
+    min-height:10vh;
+    align-content: end;
+    margin:1vh 0vw;
+}
+
+#massSchedule>div:nth-of-type(2)>div>p:nth-of-type(1){
+    grid-column: 1;
+    grid-row: 2;
+    border-right: 3px solid #2F3E46;
+}
+
+#massSchedule>div:nth-of-type(2)>div>p:nth-of-type(2){
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+}
+
+#massSchedule>div:nth-of-type(2)>div>p:nth-of-type(3){
+    grid-column: 3;
+    grid-row: 2;
+    text-align: center;
+}
+
+#massSchedule>div:nth-of-type(2)>div>h4{
+    grid-column: 1/span 3;
+    grid-row: 1;
+    font-size: 3vw;
+    align-self: end;
+}
+#massSchedule>div:nth-of-type(2)>div>h4>small{
+    font-size: 1.5vw;
+    color: #2F3E46;
+    text-decoration: none;
+}
+
+
+/* ======================
+    confession schedule
+========================*/
+#confessionSch{
+    min-height: 50vh;
+    background-color:   rgba(0, 0, 0, 0.489);
+    display: flex;
+    justify-content: center;
+    padding: 3vh 1vw;
+}
+#confessionSch>div{
+    background-color: #192434;
+    border-radius: 25px;
+    min-height: 75vh;
+    padding:3vh 3vw;
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-template-columns: 3fr 2fr;
+    border:5px solid #e1e3e6;
+}
+
+#confessionSch>div>div:nth-of-type(2) *{
+    text-align: center;
+    padding: 0vh 2vw;
+    color: #e1e3e6;
+}
+#confessionSch h1>u, #confessionSch p{
+    color: #e1e3e6;
+}
+#confessionSch img{
+    max-width: 35vw;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#confessionSch>div>div:nth-of-type(1){
+    grid-column: 1/span 2;
+    grid-row: 1;
+    align-items: center;
+    text-align: center  ;
+}
+#confessionSch>div>div:nth-of-type(3){
+    align-items: center;
+    display: grid;
+}
+
+#confessionSch>div>div:nth-of-type(2){
+    padding: 3vh 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#confessionSch>div>div:nth-of-type(2)>div{
+    border:3px dashed #e1e3e6;
+    padding:5vh 0vw;
+    border-radius: 15px;
+}
+
+/* the details of the confession schedule */
+#confessionSch>div>div:nth-of-type(2)>div>p{
+    font-size: 2.5vw;
+}
+/* the details of the confession schedule */
+#confessionSch>div i{
+    font-size: 1.15vw;
+}
+
+#confessionSch>div>div:nth-of-type(2)>p{
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* ======================
+        holy hour
+========================*/
+#holyHour{
+    min-height: 50vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.489), #F7FBFC);
+    padding: 3vh 3vw;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+#holyHour>div:nth-of-type(1){
+    justify-content: center;
+    display: flex;
+    border-right: 0.5vw solid #192434;
+}
+
+#holyHour>div:nth-of-type(1)>img{
+    max-width: 25vw;
+}
+
+
+#holyHour>div:nth-of-type(2){
+    display: flex;
+    gap: 5vh;
+    padding: 5vh 2vw;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#holyHour>div:nth-of-type(2)>div{
+    padding:5vh 0vw;
+    display: flex;
+    gap: 5vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#holyHour>div>h1{
+    padding: 0%;
+}
+#holyHour>div:nth-of-type(2)>div>p{
+    font-size: 2vw;
+    text-align: center;
+}
+
+#holyHour>div>p{
+    font-size: 1.5vw;
+    text-align: center;
+}
+#holyHour>div>p>b{
+    font-size: 3.5vw;
+}

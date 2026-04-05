@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <!-- the website title -->
+        <title>Nativity Church</title>
+
+        <!-- changing of website icon -->
+        <link rel="icon" type="image/x-icon" href="logo/nativityChurchLogo.png">
+
+        <!-- link to external css file under css folder -->
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+
+        <!-- link to external js file under js folder -->
+        <script src="main.js" defer></script>
+        <link rel="manifest" href="manifest.json">
+
+        <!-- meta description -->
+        <meta name="description" content="Church of the Nativity of the Blessed Virgin Mary - Information on Church Timing, Clergy, Sacrements, Ministry and more" />
+    </head>
+
+    <body>
+        <!-- menue bar -->
+        <header>
+            <div id = "menu" class = "menuGrid">
+                <!-- logo layout -->
+                <div>
+                    <a href = "index.html">
+                        <img src = "logo/nativityChurchLogo.png" alt = "logo">
+                    </a>
+                </div>
+                <div>
+                    <h1><b>
+                        Church of the Nativity of the Blessed Virgin Mary</b>
+                    </h1>
+                    <h1><b>
+                        新加波后港圣母圣教堂
+                    </b></h1>
+                </div>
+                <!-- navigation -->
+                <nav>
+                    <button class = "homeBtn">
+                        <a>Home</a>
+                    </button>
+                    <button class = "clergyBtn">
+                        <a>Clergy</a>
+                    </button>
+                    <button class = "scaramentBtn">
+                        <a>Sacraments</a>
+                    </button>
+                    <button class = "ministryBtn">
+                        <a>Ministries</a>
+                    </button>
+                    <button class = "donateBtn">
+                        <a>Dontate</a>
+                    </button>
+                </nav>
+        </header>
+
+        <!-- content -->
+        <main>
+            <!-- home page -->
+            <article id = "home">
+                <div>
+                    <h1>NATIVITY CHURCH</h1>
+                    <!-- can put a short one liner here -->
+                    <p>Church of the Blessed Virign Mary</p>
+                    <div>
+                        <a href="#confessionSch">Confession Schedule</a>
+                        <a href="#massSchedule">Mass Schedule</a>
+                        <a href="#holyHour">Holy Hour</a>
+                    </div>
+                </div>
+                <!-- mass schedule -->
+                <section id ="massSchedule">
+                    <h1><u>Mass Schedule</u></h1>
+                    <!-- images on the left -->
+                    <div>
+                        <div>
+                            <img src="image/massSchedule_1.jpeg" alt="mass photo 1">    
+                        </div>  
+                        <div>
+                            <img src="image/massSchedule_3.jpeg" alt="mass photo 2">    
+                        </div>
+                        <div>
+                            <img src="image/massSchedule_2.jpeg" alt="mass photo 3">    
+                        </div>
+                    </div>
+                    <!-- details -->
+                    <div>
+                        <!-- weekday detail -->
+                        <h3><u>Weekday</u></h3>
+                        <div id="mass">
+                            <h4>Mass</h4>
+                            <p>6:00PM</p>
+                            <p>English</p>
+                        </div>
+
+                        <!-- satuday detail -->
+                        <h3><u>Saturday</u></h3>
+                        <div id="mass">
+                            <h4>Mass <small> (weekday mass)</small></h4>
+                            <p>7:00AM</p>
+                            <p>English</p>
+                        </div>
+                        <div id="mass">
+                            <h4>Mass</h4>
+                            <p>6:00PM</p>
+                            <p>English</p>
+                        </div>
+
+                        <!-- sunday detail -->                        
+                        <h3><u>Sunday</u></h3>
+                       <div id="mass">
+                            <h4>Mass</h4>
+                            <p>8:00AM</p>
+                            <p>Chinese</p>
+                        </div>
+                        <div id="mass">
+                            <h4>Mass</h4>
+                            <p>9:30AM</p>
+                            <p>English</p>
+                        </div>
+                        <div id="mass">
+                            <h4>Mass</h4>
+                            <p>11:15AM</p>
+                            <p>English</p>
+                        </div>
+                        <div id="mass">
+                            <h4>Mass</h4>
+                            <p>5:00PM</p>
+                            <p>English</p>
+                        </div>
+                    </div>
+                </section>
+                                
+                <!-- confession schedule -->
+                <section id = "confessionSch">
+                    <div>
+                        <!-- details on the left -->
+                        <div>
+                            <h1><u>Confession Schedule</u></h1>
+                            <p>The Sacrement of Penance & Reconciliation</p>
+                        </div>
+                        <!-- img on the right -->
+                        <div>
+                            <div>
+                                <p>Every Friday</p>
+                                <p>7:30PM - 8:30PM</p>
+                                <p>Main Chuch - Confession Booth</p>
+                            </div>
+                            <p><small><i>"If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness." - 1 John 1:9</i></small></p>
+                        </div>
+                        <div>
+                            <img src="image/confession_1.jpg" alt="image of the confession booth in the church">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- holy hour -->
+                <section id = "holyHour">
+                    <!-- img on the left -->
+                    <div>
+                        <img src = "image/church_2.jpg" alt = "image of nativity church">
+                    </div>
+                    
+                    <!-- details -->
+                    <div>
+                        <h1><u>Holy Hour</u></h1>
+                        <p><b>Join us </b>for Holy Hour, a time of quiet prayer, reflection, and adoration.</p>
+                        <div>
+                            <p>Every <b>FIRST</b> friday of the month</p>
+                            <p>7:30PM to 8:30PM</p>
+                            <p>Main Church</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="logo">
+                <!-- nav for homescreen -->
+                <button class="homeButton">
+                    <img src="logo/nativityChurchLogo.png" alt="logo" title="logo">
+                </button>
+            </div>
+
+            <!-- nav to other pg of the website -->
+            <div>
+                <h4><u>Content</u></h4>
+                <nav>
+                    <button class="homeBtn">Home</button>
+                    <button class="clergyBtn">Clergy</button>
+                    <button class="scaramentBtn">Sacraments</button>
+                    <button class="ministryBtn">Ministries</button>
+                    <button class="donateBtn">Dontate</button>
+                </nav>
+            </div>
+        
+            <!-- for the google form -->
+            <div>
+                <h4><u>Connect with us</u></h4>
+                <img src="image/qrCode.jpg" alt="QR code to access website on mobile" title="qr code">
+            </div>
+
+            <div>
+                <h4><u>Reaching out?</u></h4>
+                <p><b>Email: </b>cnbvm.secretariat@catholic.org.sg</p>
+                <p><b>Phone no.: </b>+65 6280 0980</p>
+                <p><b>Address: </b>1259 Upper Serangoon Road Singapore 534795</p>
+                <div>
+                    <a href="https://mycatholic.sg/parish/nativityofblessedvirgin"
+                    target="_blank" class="web Logo"></a>
+
+                    <a href="https://www.facebook.com/ChurchOfTheNativityOfTheBlessedVirginMary/mentions/"
+                    target="_blank" class="fb Logo"></a>
+
+                    <a href="https://www.instagram.com/nativitychurchsg/"
+                    target="_blank" class="ig Logo"></a>
+
+                </div>
+            </div>
+
+            <h6>© 2026 Church of the Nativity of the Blessed Virgin Mary. All rights reserved.</h6>
+        </footer>
+    </body>
+</html>
