@@ -559,7 +559,7 @@ footer>div>h4{
     background-size: 40vw auto;
 }
 
-#mainParish *{
+#mainParish *, #priest *{
     color: #F7FBFC;
 }
 
@@ -586,11 +586,15 @@ footer>div>h4{
 }
 
 #otherParishPriests{
-    background-color: #d6e6f6;
+    background-color: #192434;
     min-width: 95vw;
     display: flex;
     justify-content: space-evenly;
     padding: 3vw 5vh;
+    background-image: url('../image/slanted-background.png');
+    background-position: center -20%;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #priest{
@@ -615,7 +619,7 @@ footer>div>h4{
 }
 
 #priest>div>p{
-    border:3px solid #192434;
+    border:3px solid #F7FBFC;
     min-height: 5vh;
     padding:1vh 1vw;
 }
@@ -627,8 +631,70 @@ footer>div>h4{
 }
 
 
-#horizontalGallery{
-    min-height: 35vh;
+#horizontalGallery {
     background-color: #192434;
     color: #F7FBFC;
+    border-top: 3px solid #F7FBFC;
+}
+
+.scrollable-Horizontal {
+    width: 100%;
+    overflow: hidden;
+}
+
+.timeline_H {
+    display: flex;
+    width: max-content;
+}
+
+.scrollable-Horizontal img {
+    height: 30vh;
+    display: block;
+    flex-shrink: 0;
+}
+
+
+/*============================
+            sacrament  
+=============================*/
+.sacramentMenue{
+    display: grid;
+    min-height: 105vh;
+    background: linear-gradient(rgba(255, 232, 167, 0.45), rgba(255, 199, 167, 0.45)),
+    url('../image/baby-baptisim.jpg');
+    background-size: inherit;
+    background-position: center center;
+    grid-template-rows: repeat(3,auto);
+}
+.sacramentMenue *{
+    text-align: center;
+}
+
+.sacramentMenue h1{
+    font-size: 12.5vw;
+    align-self: flex-end;
+}
+
+.sacramentMenue p{
+    padding:1vh;
+    font-size:1.5vw;
+}
+
+.sacramentMenue>div{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    padding: 1vw 1vh;
+}
+
+.sacramentMenue>div>div:nth-of-type(1), .sacramentMenue>div>div:nth-of-type(2){
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sacramentMenue a{
+    font-size: 2.5vw;
+    text-decoration: none;
+    width: 30vw;
+    align-self: center;
 }
