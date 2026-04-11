@@ -7,6 +7,11 @@
     src: url("../font/Gloock-Regular.woff");
 }
 
+@font-face {
+    font-family:LexendExa_Font;
+    src: url("../font/LexendExa-VariableFont_wght.woff");
+}
+
 /*============================
         * & elements 
 =============================*/
@@ -37,6 +42,10 @@ button{
 
 img {
     box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.85);
+}
+
+p, a{
+    font-family: LexendExa_Font;
 }
 
 /* ======================
@@ -592,7 +601,7 @@ footer>div>h4{
     justify-content: space-evenly;
     padding: 3vw 5vh;
     background-image: url('../image/slanted-background.png');
-    background-position: center -20%;
+    background-position: center -10%;
     background-repeat: no-repeat;
     background-size: 100%;
 }

@@ -35,7 +35,6 @@ window.addEventListener('load', () => {
 //////////////////
 
 //a simple auto slide show of img 
-//cafe
 var sacramentDiv = document.querySelector(".sacramentMenue");
 const sacramentBG = ['image/annoiting-of-the-sick.jpg', 'image/baby-baptisim.jpg', 'image/confession_1.jpg', 'image/wedding.jpg'];
 let index = 0;
