@@ -34,15 +34,15 @@ window.addEventListener('load', () => {
 //    SACRAMENT
 //////////////////
 
-//a simple auto slide show of img 
-var sacramentDiv = document.querySelector(".sacramentMenue");
-const sacramentBG = ['image/annoiting-of-the-sick.jpg', 'image/baby-baptisim.jpg', 'image/confession_1.jpg', 'image/wedding.jpg'];
-let index = 0;
-function changeBg() {
-    sacramentDiv.style.backgroundImage = "linear-gradient(rgba(255, 232, 167, 0.45), rgba(255, 199, 167, 0.45)), url('" + sacramentBG[index] + "')";
-    sacramentDiv.style.backgroundSize = "inherit";
-    sacramentDiv.style.backgroundPosition = "center center";
-    index = (index + 1) % sacramentBG.length;
-}
-//change bg for scarament every 3.5s
-setInterval(changeBg, 1500);
+// //a simple auto slide show of img 
+// var sacramentDiv = document.querySelector(".sacramentMenue");
+// const sacramentBG = ['image/annoiting-of-the-sick.jpg', 'image/baby-baptisim.jpg', 'image/confession_1.jpg', 'image/wedding.jpg'];
+// let index = 0;
+// function changeBg() {
+//     sacramentDiv.style.backgroundImage = "linear-gradient(rgba(255, 232, 167, 0.45), rgba(255, 199, 167, 0.45)), url('" + sacramentBG[index] + "')";
+//     sacramentDiv.style.backgroundSize = "inherit";
+//     sacramentDiv.style.backgroundPosition = "center center";
+//     index = (index + 1) % sacramentBG.length;
+// }
+// //change bg for scarament every 3.5s
+// setInterval(changeBg, 1500);

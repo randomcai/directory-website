@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- the website title -->
     <title>Nativity Church</title>
 
@@ -15,7 +15,7 @@
 
     <!-- link to external js file under js folder -->
     <script src="main.js" defer></script>
-    <link rel="manifest" href="manifest.json">
+    <!-- <link rel="manifest" href="manifest.json"> -->
 
     <!-- meta description -->
     <meta name="description"
@@ -68,43 +68,265 @@
     </header>
     <!-- content -->
     <main>
-        <section class="sacramentMenue">
-            <h1>SACRAMENTS</h1>
-            <p>sacred services we offered</p>
-            <div>
-                <!-- 1st row of directory -->
+        <section class="sacramentNPastroalMenue">
+            <div class="sacramentMenue">
+                <h1>SACRAMENTS</h1>
+                <p>sacred rites of the church</p>
                 <div>
-                    <a href="#confession">CONFESSION</a>
-                    <a href="#sick">ANOINTING OF THE SICK</a>
-                    <a href="#wedding">MATRIMONY</a>
+                    <div>
+                        <a href="#confession">CONFESSION</a>
+                        <a href="#sick">ANOINTING OF THE SICK</a>
+                        <a href="#wedding">MATRIMONY</a>
+                        <a href="#infant">INFANT BAPTISM</a>
+                    </div>
                 </div>
+            </div>
 
-                <!-- 2nd row of directory -->
+            <!-- pastroal service menue -->
+            <div class="pastroalMenue">
+                <h1>PASTROAL</h1>
+                <p>pastroal services we offered</p>
                 <div>
-                    <a href="#infant">INFANT BAPTISM</a>
-                    <a href="#rcia">RCIA</a>
+                    <!-- 1st row of directory -->
+                    <div>
+                        <a href="#house">HOUSE BLESSING</a>
+                        <a href="#catechism">L1 CATECHISM REGISTRATION</a>
+                        <a href="#rcia">RCIA INQUIRIES</a>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- sacrament breaker -->
+        <section id="sacrament">
+            <div>
+            </div>
+            <div>
+                <h3><i>
+                        "Our Lord in the Blessed Sacrament has His hands full of graces, and He is ready to bestow them
+                        on anyone who asks for them."
+                    </i></h3>
+                <p>- St Peter of Alcantara</p>
+            </div>
+        </section>
+
         <!-- confession -->
-        <section id="confession">
-            <h2>confession</h2>
+        <section id="confession" class="left">
+            <div>
+                <h2>The Sacrament of Penance & Reconciliation</h2>
+                <p><i>
+                        "The whole power of the sacrament of Penance consists in restoring us to God's grace and joining
+                        us
+                        with him in an intimate friendship.
+                        Reconciliation with God is thus the purpose and effect of this sacrament. For those who receive
+                        the
+                        sacrament of Penance with contrite
+                        heart and religious disposition, reconciliation is usually followed by peace and serenity of
+                        conscience with strong spiritual consolation.
+                        Indeed the sacrament of Reconciliation with God brings about a true "spiritual resurrection,"
+                        restoration of the dignity and blessings of
+                        the life of the children of God, of which the most precious is friendship with God."
+                    </i>
+                    - CCC 1468
+                </p>
+                <h3>
+                    Confession Schedule:
+                </h3>
+                <div>
+                    <p>Every Friday</p>
+                    <p>7:30PM - 8:30PM</p>
+                    <p>Main Church - Confession Booth</p>
+                </div>
+            </div>
+            <div>
+                <img src="image/confession_img.jpg">
+            </div>
         </section>
 
         <!-- anointing of the sick -->
-        <section id="sick">
-            <h2>anointing of the sick</h2>
+        <section id="sick" class="right">
+            <div>
+                <img src="image/annoiting-of-the-sick.jpg">
+            </div>
+            <div>
+                <h2>The Sacrament of the Anointing of The Sick</h2>
+                <p><i>
+                        "By the sacred anointing of the sick and the prayer of the priests the whole Church commends
+                        those who are ill
+                        to the suffering and glorified Lord, that he may raise them up and save them. And indeed she
+                        exhorts them to
+                        contribute to the good of the People of God by freely uniting themselves to the Passion and
+                        death of Christ."
+                    </i>
+                    - CCC 1532
+                </p>
+                <h3>
+                    Receiving this sacrament:
+                </h3>
+                <div>
+                    <p>Please call the parish office in case of serious illness or hospitalisation as soon as possible
+                        to make arrangements.</p>
+                    <p><b>Parish Office: +65 6280 0980</b></p>
+                    <p>You may also contact the parish nearest to the hospital:</p>
+                </div>
+            </div>
+            <table id="hospitalTable">
+                <thead>
+                    <tr>
+                        <th>Hospital</th>
+                        <th>Nearest Parish</th>
+                        <th>Telephone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CDC / Mount Alvernia / Mount Elizabeth Novena / Ren Ci / Tan Tock Seng / Thomson Medical
+                            Centre</td>
+                        <td>Church of St Alphonsus (Novena Church)</td>
+                        <td>6255 2133</td>
+                    </tr>
+                    <tr>
+                        <td>Farrer Park / KK Women's & Children's / Raffles Hospital</td>
+                        <td>Church of Our Lady of Lourdes</td>
+                        <td>6294 0624</td>
+                    </tr>
+                    <tr>
+                        <td>Kwong Wai Shiu Hospital</td>
+                        <td>Church of St Michael</td>
+                        <td>6291 9272</td>
+                    </tr>
+                    <tr>
+                        <td>Mount Elizabeth Hospital</td>
+                        <td>Church of the Sacred Heart</td>
+                        <td>6737 9285</td>
+                    </tr>
+                    <tr>
+                        <td>Singapore General Hospital</td>
+                        <td>
+                            <span>Church of St Bernadette /</span>
+                            <span>Church of St Teresa</span>
+                        </td>
+                        <td>
+                            <span>6737 3529 /</span>
+                            <span>6271 1184</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sengkang General Hospital</td>
+                        <td><span>St Anne's Church /</span>
+                            <span>Church of the Nativity of the Blessed Virgin Mary /</span>
+                            <span>Church of the Transfiguration </span>
+                        </td>
+                        <td>
+                            <span>6386 5072 /</span>
+                            <span>6280 0980 /</span>
+                            <span>6341 9718</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Woodbridge Hospital (IMH)</td>
+                        <td>Church of St Vincent de Paul</td>
+                        <td>6482 0959</td>
+                    </tr>
+                    <tr>
+                        <td>Ang Mo Kio Community Hospital</td>
+                        <td>Church of Christ the King</td>
+                        <td>6459 9958 / 6457 7122</td>
+                    </tr>
+                    <tr>
+                        <td>Khoo Teck Puat Hospital</td>
+                        <td>Church of Our Lady Star of the Sea</td>
+                        <td>6257 4229</td>
+                    </tr>
+                    <tr>
+                        <td>Mount Alvernia Hospital</td>
+                        <td>
+                            <span>Church of the Holy Spirit /</span>
+                            <span>Church of the Risen Christ</span>
+                        </td>
+                        <td><span>6453 6340 /</span>
+                            <span>6253 2166</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Changi General Hospital</td>
+                        <td>Church of the Holy Trinity</td>
+                        <td>6784 2332</td>
+                    </tr>
+                    <tr>
+                        <td>Parkway East Hospital</td>
+                        <td>Church of the Holy Family</td>
+                        <td>6344 0046 Ext. 1001</td>
+                    </tr>
+                    <tr>
+                        <td>Alexandra Hospital</td>
+                        <td>Blessed Sacrament Church</td>
+                        <td>6474 0582</td>
+                    </tr>
+                    <tr>
+                        <td>Gleneagles Hospital</td>
+                        <td>Church of St Ignatius</td>
+                        <td>6466 0625</td>
+                    </tr>
+                    <tr>
+                        <td>Jurong Community / Ng Teng Fong Hospital</td>
+                        <td>Church of St Mary of the Angels</td>
+                        <td>6567 3866</td>
+                    </tr>
+                    <tr>
+                        <td>National University Hospital</td>
+                        <td>Church of the Holy Cross</td>
+                        <td>6777 5858</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <!-- MATRIMONY -->
-        <section id="wedding">
-            <h2>martimony</h2>
+        <section id="wedding" class="left">
+            <div>
+                <h2>The Sacrament of Holy Matrimony</h2>
+                <p><i>
+                        "The matrimonial covenant, by which a man and a woman establish between themselves
+                        a partnership of the whole of life, is by its nature ordered toward the good of the
+                        spouses and the procreation and education of offspring; this covenant between baptised
+                        persons has been raised by Christ the Lord to the dignity of a sacrament."
+                    </i>
+                    — CCC 1601
+                </p>
+                <h3>Marriage Preparation:</h3>
+                <div>
+                    <p>
+                        Couples are strongly encouraged to begin their marriage preparation journey
+                        <b>at least one year in advance</b> by meeting with a priest to discuss
+                        the sacrament and what it means to enter into a Catholic marriage.
+                    </p>
+                    <p>
+                        To begin your journey or enquire about using the church for your wedding,
+                        please contact the parish office.
+                    </p>
+                    <p><b>Parish Office: +65 6280 0980</b></p>
+                    <p><b>Email: cnbvm.secretariat@catholic.org.sg</b></p>
+                </div>
+            </div>
+            <div>
+                <img src="image/wedding.jpg" alt="Matrimony">
+            </div>
         </section>
 
         <!-- infant -->
         <section id="infant">
             <h2>Infant Baptism</h2>
+        </section>
+
+        <!-- house blessing -->
+        <section id="house">
+            <h2>HOUSE BLESSING</h2>
+        </section>
+
+        <!-- catechism -->
+        <section id="catechism">
+            <h2>L1 CATECHISM REGISTRATION</h2>
         </section>
 
         <!-- rcia -->

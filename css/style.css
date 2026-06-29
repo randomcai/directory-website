@@ -44,7 +44,7 @@ img {
     box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.85);
 }
 
-p, a{
+p, a,td{
     font-family: LexendExa_Font;
 }
 
@@ -676,50 +676,342 @@ footer>div>h4{
 /*============================
             sacrament  
 =============================*/
-.sacramentMenue{
+.sacramentNPastroalMenue {
     display: grid;
-    min-height: 105vh;
-    background: linear-gradient(rgba(255, 232, 167, 0.45), rgba(255, 199, 167, 0.45)),
-    url('../image/baby-baptisim.jpg');
-    background-size: inherit;
-    background-position: center center;
-    grid-template-rows: repeat(3,auto);
+    grid-template-columns: 1fr 1fr;
 }
-.sacramentMenue *{
+
+.sacramentMenue {
+    grid-column: 1;
+    display: grid;
+
+    grid-template-rows: 2fr 1fr 3fr;
+    min-height: 105vh;
+    background-image: url('../image/left.png');
+    background-color: #192434;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding: 4vw 4vh;
+
+}
+
+.pastroalMenue {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 2fr 1fr 3fr;
+    min-height: 105vh;
+    padding: 4vw 4vh;
+    background-image: url('../image/right.png');
+    background-color: #e8d9b5;
+    background-size: auto 73%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+/* text alignment per side */
+.sacramentMenue * { text-align: left; }
+.pastroalMenue * { text-align: right; }
+
+/* headings */
+.sacramentMenue h1, .pastroalMenue h1 {
+    font-size: clamp(4rem, 6.5vw, 7rem);
+    line-height: 1;
+    padding: 3vh 0vw;
+    margin-bottom: 0.5rem;
+    align-self: flex-end;   
+}
+
+.sacramentMenue h1 { color: #e8d9b5; }
+.pastroalMenue h1  { color: #192434; }
+
+/* subtitle */
+.sacramentMenue p, .pastroalMenue p {
+    font-size: clamp(0.75rem, 1.1vw, 1rem);
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
+    opacity: 0.6;
+}
+
+.sacramentMenue p { color: #e8d9b5; }
+.pastroalMenue p  { color: #192434; }
+
+/* link container — pushed to bottom with margin-top auto */
+.sacramentMenue > div, .pastroalMenue > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;      /* pushes links to bottom of panel */
+    padding-bottom: 2rem;
+}
+
+.sacramentMenue > div > div,
+.pastroalMenue > div > div {
+    display: flex;
+    flex-direction: column;        /* links sit side by side in each row */
+    gap: 0.75rem;
+    background: none;
+    flex-wrap: wrap;            /* wraps if screen is too narrow */
+}
+.pastroalMenue > div > div {
+    align-items: flex-end;
+}
+
+  /* rows left-aligned */
+.sacramentMenue a, .pastroalMenue a {
+    font-size: clamp(0.65rem, 0.9vw, 0.85rem);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    opacity: 1;
+    width: fit-content;
+    padding: 0.4rem 1rem;
+    border: 1px solid;          /* inherits color from the text color below */
+    transition: opacity 0.2s, background 0.2s;
+}
+
+.sacramentMenue a {
+    color: #e8d9b5;
+    border-color: rgba(232, 217, 181, 0.4);
+}
+
+.pastroalMenue a {
+    color: #192434;
+    border-color: rgba(25, 36, 52, 0.3);
+}
+
+.sacramentMenue a:hover {
+    background: rgba(232, 217, 181, 0.1);
+    border-color: #e8d9b5;
+}
+
+.pastroalMenue a:hover {
+    background: rgba(25, 36, 52, 0.08);
+    border-color: #192434;
+}
+
+
+#sacrament{
+    height:fit-content;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr;
+    background-color: #192434;
+    padding: 0vh 0vw;
+    border-top: solid 3px #F7FBFC;
+}
+
+#sacrament>div:nth-of-type(1){
+    background-image: url("../image/church_2.jpg");
+    border-top-right-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#sacrament>div:nth-of-type(2){
+    background-color: #192434;
+    padding: 5vh 5vw;
+}
+
+#sacrament *{
+    color:#F7FBFC;
+}
+#sacrament h3{
+    font-size:clamp(2.5rem,3.5vw, 4.5rem);
+}
+
+
+.sacramentpg main>section:not(.sacramentNPastroalMenue, #sacrament){
+    min-height: 105vh;
+    background-color: #F7FBFC;
+    padding: 5vh 5vw;
+    border-top: 3px solid #192434;
+    border-top: 3px solid #192434;
+}
+
+.sacramentpg main>section:not(.sacramentNPastroalMenue) h2{
+    font-size:clamp(3.5rem,4.5vw, 5.5rem);
+}
+
+.sacramentpg main>section:not(.sacramentNPastroalMenue) p{
+    font-size:clamp(.5rem,1vw, 1.5rem);
+    padding: 3vh 0vw;
+}
+
+/* content on the left/right */
+.left{
+    display:grid;
+    grid-template-columns: 3fr 2fr;
+    column-gap:3vw;
+}
+
+.right{
+    display:grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap:3vw;
+}
+
+#confession:before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(#0a0a0ac7, #0a0a0ac7),
+        url('../image/confession_1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter: blur(4px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+#confession{
+    background-color: transparent !important;
+    border-top: 3px solid #F7FBFC !important;
+}
+
+#confession *, #sick *, #wedding *{
+    color:#F7FBFC
+}
+
+#confession div:nth-of-type(2), #sick>div:nth-of-type(1), #wedding>div:nth-of-type(2){
+    display: grid;
+    place-items: center;
+    padding: 0.5vh 0vw;
+}
+
+#confession img, #sick img{
+    width: 35vw;
+    height:auto;
+}
+
+#confession>div>div>p{
+    font-size:clamp(0.75rem,1.5vw, 2.5rem);
     text-align: center;
 }
 
-.sacramentMenue h1{
-    font-size: 12.5vw;
-    align-self: flex-end;
+#confession>div>div, #wedding>div>div{
+    border:3px dashed #F7FBFC;
+    padding:2vh 0vw;
+    border-radius: 15px;
 }
 
-.sacramentMenue p{
-    padding:1vh;
-    font-size:1.5vw;
+#confession h3, #wedding h3{
+    font-size:clamp(1.5rem,2.5vw, 3.5rem);
+    padding:2vh 0vw;
 }
 
-.sacramentMenue>div{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2,1fr);
-    padding: 1vw 1vh;
+/* ANNOITING OF THE SICK */
+#sick b, #wedding b{
+    color:#b64646;
 }
 
-.sacramentMenue>div>div:nth-of-type(1), .sacramentMenue>div>div:nth-of-type(2){
-    display: flex;
-    justify-content: space-evenly;
-    background: linear-gradient(rgba(255, 232, 167, 0.45), rgba(255, 199, 167, 0.45)),
+#sick:before{
+    content: "";
+    position: absolute;
+    inset: 0;
 
+    background-image:
+        linear-gradient(#0a0a0ac7, #0a0a0ac7),
+        url('../image/annoiting-of-the-sick.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter: blur(4px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+#sick{
+    background-color: transparent !important;
+    border-top: 3px solid #F7FBFC !important;
 }
 
-.sacramentMenue a{
-    font-size: 2.5vw;
-    text-decoration: none;
-    width: 30vw;
-    align-self: center;
+#sick table{
+    grid-row: 2;
+    grid-column: 1/span 2;
+}
+#confession, #sick, #wedding {
+    position: relative;
+    overflow: hidden;
+}
+#hospitalTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba(247, 251, 252, 0.6);
+    margin-top: 2vh;
+    font-size: clamp(0.6rem, 0.85vw, 0.9rem);
 }
 
+#hospitalTable th, #hospitalTable td {
+    padding: 1vh 1vw;
+    text-align: left;
+    border-bottom: 1px solid rgba(247, 251, 252, 0.2);
+    color: #F7FBFC;
+    vertical-align: top;
+}
+
+#hospitalTable th {
+    font-family: Gloock_Font;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid rgba(247, 251, 252, 0.6);
+    padding-bottom: 1.5vh;
+    font-size: clamp(0.75rem, 1vw, 1.5rem);
+}
+
+#hospitalTable tr:last-child td {
+    border-bottom: none;
+}
+
+/* highlight nativity's own row */
+#hospitalTable tr:nth-child(6) {
+    background: rgba(247, 251, 252, 0.08);
+}
+
+#hospitalTable tr:nth-child(6) td:nth-child(2) {
+    font-weight: 600;
+}
+
+#hospitalTable td span {
+    display: block;
+}
+
+#hospitalTable th:first-child,
+#hospitalTable td:first-child {
+    width: 40%;
+}
+
+#wedding:before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(#0a0a0ac7, #0a0a0ac7),
+        url('../image/wedding.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter: blur(4px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+#wedding{
+    background-color: transparent !important;
+    border-top: 3px solid #F7FBFC !important;
+}
+
+#wedding>div>div {
+    padding:2vh 2vw;
+}
 
 /*============================
         donation page  
@@ -773,20 +1065,39 @@ footer>div>h4{
 
 #donationInfo>div>div{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
-#cash > img, #cheque>img, #paynow>img{
+#cash > img, #paynow>img{
     box-shadow: none;
     
 }
-#cash, #cheque{
+#cash{
     border-right:3px solid #192434;
 }
-#cash, #cheque, #paynow{
+#cash, #paynow{
     padding: 3vh 2vw;
 }
 #donationInfo h1{
     font-size:clamp(3rem,5vw, 5.5rem);
     padding: 0vh 0vw 3vh 0vw;
+}
+
+#donationInfo h3{
+    font-size:clamp(2rem,2.5vw, 3.5rem);
+    padding: 1vh 0vw;
+}
+
+#donationInfo p{
+    padding: 1vh 0vw;
+}
+
+
+#paynow div>p{
+    font-size:clamp(0.5rem,0.75vw, 1.5rem);
+    padding:1.5vh 0vw;
+}
+
+#paynow div>p:nth-of-type(1){
+    border:3px solid #b64646;
 }
