@@ -15,7 +15,6 @@
 
     <!-- link to external js file under js folder -->
     <script src="main.js" defer></script>
-    <!-- <link rel="manifest" href="manifest.json"> -->
 
     <!-- meta description -->
     <meta name="description"
@@ -33,12 +32,15 @@
                 </a>
             </div>
             <div>
-                <h1><b>
-                        Church of the Nativity of the Blessed Virgin Mary</b>
-                </h1>
-                <h1><b>
-                        圣母圣诞堂
+                <a href="index.html">
+
+                    <h1><b>
+                            Church of the Nativity of the Blessed Virgin Mary</b>
+                    </h1>
+                    <h1><b>
+                            圣母圣诞堂
                     </b></h1>
+                </a>
             </div>
             <!-- navigation -->
             <nav>
@@ -69,9 +71,47 @@
 
     <!-- content -->
     <main>
+        <!-- hero -->
+        <section id="ministryHero">
+            <h1>MINISTRIES</h1>
+            <p>serving God through community</p>
+        </section>
 
+        <!-- 4 category cards -->
+        <section id="ministryGrid">
+            <a href="ministry-prayer.html" class="ministry-card">
+                <div class="ministry-card-img" style="background-image: url('image/church_2.jpg')"></div>
+                <div class="ministry-card-body">
+                    <h2>Prayer &amp; Liturgy</h2>
+                    <p>Altar Servers, Choir, Lectors, Wardens and more</p>
+                </div>
+            </a>
+
+            <a href="ministry-pastoral.html" class="ministry-card">
+                <div class="ministry-card-img" style="background-image: url('image/annoiting-of-the-sick.jpg')"></div>
+                <div class="ministry-card-body">
+                    <h2>Pastoral Care</h2>
+                    <p>Funeral Ministry, Bereavement, SSVP and more</p>
+                </div>
+            </a>
+
+            <a href="ministry-faith.html" class="ministry-card">
+                <div class="ministry-card-img" style="background-image: url('image/cat_class.jpeg')"></div>
+                <div class="ministry-card-body">
+                    <h2>Faith Formation</h2>
+                    <p>Catechesis, RCIA, Adult Faith Formation and more</p>
+                </div>
+            </a>
+
+            <a href="ministry-community.html" class="ministry-card">
+                <div class="ministry-card-img" style="background-image: url('image/church_1.jpg')"></div>
+                <div class="ministry-card-body">
+                    <h2>Community Life</h2>
+                    <p>Couples for Christ, NCC, Chinese &amp; Teochew Group and more</p>
+                </div>
+            </a>
+        </section>
     </main>
-
 
     <!-- Footer -->
     <footer>
@@ -86,11 +126,12 @@
         <div>
             <h4><u>Content</u></h4>
             <nav>
-                <button class="homeBtn">Home</button>
-                <button class="clergyBtn">Clergy</button>
-                <button class="scaramentBtn">Sacraments</button>
-                <button class="ministryBtn">Ministries</button>
-                <button class="donateBtn">Donate</button>
+                <button class="index"><a href='index.html'>Home</a></button>
+                <button class="aboutBtn"><a href='about.html'>About Us</a></button>
+                <button class="clergyBtn"><a href='clergy.html'>Contact Us</a></button>
+                <button class="scaramentBtn"><a href='scarament.html'>Sacraments & Pastroal Services</a></button>
+                <button class="ministryBtn"><a href='ministry.html'>Ministries</a></button>
+                <button class="donateBtn"><a href='donate.html'>Donate</a></button>
             </nav>
         </div>
 
@@ -115,7 +156,6 @@
 
             </div>
         </div>
-
 
         <h6>© 2026 Church of the Nativity of the Blessed Virgin Mary. All rights reserved. Website designed and
             developed by Catarina Chai.</h6>

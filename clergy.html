@@ -21,6 +21,7 @@
     <meta name="description"
         content="Church of the Nativity of the Blessed Virgin Mary - Information on Church Timing, Clergy, Sacrements, Ministry and more" />
 </head>
+
 <body class="clergypg">
     <!-- menue bar -->
     <header>
@@ -32,12 +33,15 @@
                 </a>
             </div>
             <div>
-                <h1><b>
-                        Church of the Nativity of the Blessed Virgin Mary</b>
-                </h1>
-                <h1><b>
-                        圣母圣诞堂
-                    </b></h1>
+                <a href="index.html">
+
+                    <h1><b>
+                            Church of the Nativity of the Blessed Virgin Mary</b>
+                    </h1>
+                    <h1><b>
+                            圣母圣诞堂
+                        </b></h1>
+                </a>
             </div>
             <!-- navigation -->
             <nav>
@@ -65,41 +69,117 @@
                 </button>
             </nav>
     </header>
+
     <!-- content -->
     <main>
+        <section id="contactMenu">
+            <div>
+                <h1>
+                    CONTACT US
+                </h1>
+                <p>Connect with our parish community, priests, and staff</p>
+                <div>
+                    <a href="#officeDirectory">Office Directory</a>
+                    <a href="#mainParish">Our Priests</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Office Directory -->
+        <section id="officeDirectory">
+            <div>
+                <h1>
+                    Office Directory
+                </h1>
+                <div class="directoryList">
+                    <div class="directoryItem" id="officeHours">
+                        <h3>Office Hours</h3>
+                        <table class="officeHoursTable">
+                            <tbody>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>9 am-12:30 pm, 1:30-8 pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuesday</td>
+                                    <td>9 am-12:30 pm, 1:30-8 pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday</td>
+                                    <td>9 am-12:30 pm, 1:30-8 pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Thursday</td>
+                                    <td>9 am-12:30 pm, 1:30-8 pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday</td>
+                                    <td>9 am-12:30 pm, 1:30-8 pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday</td>
+                                    <td>9 am-12:30 pm, 1:30-5 pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday</td>
+                                    <td>9 am-1 pm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="directoryItem">
+                        <h3>Bookings, Enquiries &amp; Sacraments</h3>
+                        <p>For booking of rooms, general enquiries, application and request for sacraments, house
+                            blessings, etc.</p>
+                        <p><b>Email: </b>cnbvm.secretariat@catholic.org.sg</p>
+                        <p><b>Phone no.: </b>+65 6280 0980</p>
+                    </div>
+                    <div class="directoryItem">
+                        <h3>Pastoral Enquiries</h3>
+                        <p>For weddings, funerals, communion to the homebound and other pastoral enquiries.</p>
+                        <p><b>Email: </b>pastoraloffice.cnbvm@catholic.org.sg</p>
+                        <p><b>Phone no.: </b>+65 6281 0306</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parish -->
         <section id="mainParish">
             <div>
                 <h1>
                     Our<br>Priests
                 </h1>
                 <div>
-                    <h2>Fr. Kenson Koh</h2>
+                    <h2>Rev Fr Gregoire van Giang</h2>
                     <p>Parish Priest</p>
-                    <p>Phone: +65 6283 9344</p>
-                    <p>Email: kenson.koh@catholic.org.sg</p>
+                    <p>Phone: +65 6737 9285</p>
+                    <p>Email: PLACEHOLDER</p>
                 </div>
             </div>
         </section>
         <section id="otherParishPriests">
             <div id="priest">
-                <img src='image/father_timothy.jpeg' alt="father timothy">
-                <h3>Fr. Timothy Soo</h3>
+                <img src='image/placeholder.jpg' alt="PLACEHOLDER">
+                <h3>Rev Fr Terence Pereira</h3>
                 <p>Assistant Priest</p>
                 <div>
-                    <p>Phone: +65 6015 6779</p>
-                    <p>Email: timothy.soo@catholic.org.sg</p>
+                    <p>Phone: +65 6291 9272</p>
+                    <p>Email: PLACEHOLDER</p>
                 </div>
             </div>
             <div id="priest">
                 <img src='image/kevin_wee.png' alt="Kevin Wee">
-                <h3>Kevin Wee</h3>
-                <p>Deacon</p>
+                <h3>Rev Fr Kevin Wee</h3>
+                <p>Assistant Parish Priest</p>
                 <div>
                     <p>Phone: +65 6015 6772</p>
                     <p>Email: kevin.wee@catholic.org.sg</p>
                 </div>
             </div>
         </section>
+
+        <!-- gallery -->
         <section id="horizontalGallery">
             <div class="scrollable-Horizontal">
                 <div class="timeline_H">
@@ -127,7 +207,6 @@
         </section>
     </main>
 
-
     <!-- Footer -->
     <footer>
         <div class="logo">
@@ -141,11 +220,12 @@
         <div>
             <h4><u>Content</u></h4>
             <nav>
-                <button class="homeBtn">Home</button>
-                <button class="clergyBtn">Clergy</button>
-                <button class="scaramentBtn">Sacraments</button>
-                <button class="ministryBtn">Ministries</button>
-                <button class="donateBtn">Donate</button>
+                <button class="index"><a href='index.html'>Home</a></button>
+                <button class="aboutBtn"><a href='about.html'>About Us</a></button>
+                <button class="clergyBtn"><a href='clergy.html'>Contact Us</a></button>
+                <button class="scaramentBtn"><a href='scarament.html'>Sacraments & Pastroal Services</a></button>
+                <button class="ministryBtn"><a href='ministry.html'>Ministries</a></button>
+                <button class="donateBtn"><a href='donate.html'>Donate</a></button>
             </nav>
         </div>
 

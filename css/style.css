@@ -8,7 +8,7 @@
 }
 
 @font-face {
-    font-family:LexendExa_Font;
+    font-family: LexendExa_Font;
     src: url("../font/LexendExa-VariableFont_wght.woff");
 }
 
@@ -22,29 +22,33 @@
     color: #2F3E46;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
 /* make sure no horizontal over fill */
-html, body{
+html,
+body {
     max-width: 100%;
 }
 
-body{
-    background-color:transparent;
+body {
+    background-color: transparent;
 }
 
-button{
+button {
     background-color: transparent;
-    border:none;
+    border: none;
 }
 
 img {
-    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.85);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
+    border-radius: 6px;
 }
 
-p, a,td{
+p,
+a,
+td {
     font-family: LexendExa_Font;
 }
 
@@ -53,7 +57,7 @@ p, a,td{
 ========================*/
 .menuGrid {
     display: grid;
-    grid-template-columns: auto auto 1fr;   /* CHANGE 3fr → 1fr */
+    grid-template-columns: auto auto 1fr;
     max-height: min-content;
     padding: 2vh 2vw;
     background-color: #F7FBFC;
@@ -61,79 +65,85 @@ p, a,td{
 }
 
 /* logo */
-.menuGrid div:nth-child(1){
+.menuGrid div:nth-child(1) {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.menuGrid img{
+.menuGrid img {
     max-height: 22.5vh;
     width: auto;
     box-shadow: none;
 }
 
 /* name */
-.menuGrid div:nth-child(2){
+.menuGrid div:nth-child(2) {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-.menuGrid div:nth-child(2)>*{
+.menuGrid div:nth-child(2) * {
     text-align: left;
     font-size: 1.75vw;
     font-family: Gloock_Font;
 }
 
+.menuGrid div:nth-child(2) a{
+    text-decoration: none;
+}
 
 /* nav bar */
 .menuGrid nav {
-    display: flex;                    /* CHANGE from grid */
-    justify-content: space-evenly;   /* even spacing automatically */
-    align-items: flex-end;           /* all text bottom-aligned */
+    display: flex;
+    /* CHANGE from grid */
+    justify-content: space-evenly;
+    /* even spacing automatically */
+    align-items: flex-end;
+    /* all text bottom-aligned */
     width: 100%;
 }
 
-.menuGrid > nav > button {
+.menuGrid>nav>button {
     display: flex;
     align-items: flex-end;
     justify-content: center;
     padding: 0.5vh 0.25vw;
 }
 
-.menuGrid > nav > button > a {
+.menuGrid>nav>button>a {
     font-size: clamp(0.6rem, 0.85vw, 0.9rem);
     text-align: center;
 }
 
 /* sacrament only */
-.menuGrid > nav > button.scaramentBtn > a {
+.menuGrid>nav>button.scaramentBtn>a {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 /* ======================
             HOME
 ========================*/
 
-body.indexpg::before{
+body.indexpg::before {
     content: "";
     position: fixed;
     inset: 0;
 
-    background-image: url('../image/background.jpg');
+    background-image: url('../image/background_2.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-
     filter: blur(4px);
-    transform: scale(1.05);
+    transform: scale(1.15);
     z-index: -1;
 }
 
-main{
+main {
     min-height: 100vh;
     background-color: transparent;
 }
@@ -148,10 +158,11 @@ footer {
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(2, auto);
     max-width: 100vw;
-    padding-top: 1rem;
+    padding: 1vh 0vw;
 }
-footer img{
-    border:none;
+
+footer img {
+    border: none;
     box-shadow: none;
     border-radius: 0;
 }
@@ -177,9 +188,10 @@ footer>div:nth-of-type(4) {
     flex-direction: column;
     justify-content: space-evenly;
 }
-footer>div:nth-of-type(4)>div{
+
+footer>div:nth-of-type(4)>div {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
 }
 
 footer>div:nth-of-type(3)>img {
@@ -191,12 +203,15 @@ footer>h6 {
     grid-row: 2;
     grid-column: 1;
     justify-self: center;
+    max-width: 25vw;
+    text-align: center;
 }
 
 footer>.logo {
     grid-column: 1;
     grid-row: 1;
     justify-self: center;
+    max-width: 25vw;
 }
 
 footer img {
@@ -205,8 +220,8 @@ footer img {
 
 footer nav {
     display: grid;
-    grid-template-rows: repeat(5, auto);
-    row-gap: 1rem;
+    grid-template-rows: repeat(6, auto);
+    row-gap: 1.25vh;
 }
 
 footer button {
@@ -229,7 +244,7 @@ footer button:nth-of-type(3) {
     grid-row: 3;
 }
 
-footer>div>h4{
+footer>div>h4 {
     padding: 1vh 0vw;
     font-size: 1.25vw;
 }
@@ -239,28 +254,19 @@ footer>div>h4{
          ccs tile
 ========================*/
 .Logo {
-    width: 75px;
-    height: 75px;
+    width: clamp(40px, 5vw, 75px);
+    height: clamp(40px, 5vw, 75px);
     background-image: url('../image/socialSprites.jpg');
     background-repeat: no-repeat;
+    background-size: 300% auto; /* 3 icons wide, so 300% */
     display: inline-block;
     text-decoration: none;
     border-radius: 50%;
 }
 
-.web {
-    background-position: 0 0;
-}
-
-.fb {
-    background-position: -75px 0;
-}
-
-.ig {
-    background-position: -150px 0;
-}
-
-
+.web { background-position: 0 0; }
+.fb  { background-position: 50% 0; }  /* 50% = second of 3 icons */
+.ig  { background-position: 100% 0; } /* 100% = third icon */
 /* ======================
         home article
 ========================*/
@@ -271,30 +277,33 @@ footer>div>h4{
     gap: 0%;
 }
 
-#home>div:nth-child(1){
+#home>div:nth-child(1) {
     min-height: 105vh;
     display: grid;
     grid-template-rows: 3fr 1fr 1fr;
     text-align: center;
     place-items: center;
+    border-bottom: 2px solid #192434;
+
 }
 
-#home>div:nth-child(1)>h1{
+#home>div:nth-child(1)>h1 {
     text-align: center;
     align-self: self-end;
     font-size: 10vw;
 }
 
-#home>div:nth-child(1)>div{
+#home>div:nth-child(1)>div {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     max-width: 100vw;
     min-width: 90vw;
 }
-#home>div:nth-child(1) a{
+
+#home>div:nth-child(1) a {
     font-size: 2vw;
-    border:solid 5px #2F3E46;
+    border: solid 5px #2F3E46;
     border-radius: 3vw;
     min-width: 20vw;
     text-decoration: none;
@@ -302,7 +311,9 @@ footer>div>h4{
 }
 
 
-#massSchedule h1, #holyHour h1, #confessionSch h1{
+#massSchedule h1,
+#holyHour h1,
+#confessionSch h1 {
     grid-row: 1;
     grid-column: 1/span 2;
     text-align: center;
@@ -310,64 +321,67 @@ footer>div>h4{
     font-size: 4.5vw;
     padding: 2vh 2vw;
 }
+
 /* ======================
-         mass schedule
+        mass schedule
 ========================*/
-#massSchedule{
+#massSchedule {
     display: grid;
     grid-template-columns: 3fr 3fr;
     grid-template-rows: min-content auto;
-    min-height:150vh;
-    /* background-color: #F8FAFC; */
-    background-image: linear-gradient(to top,  rgba(0, 0, 0, 0.489), #F7FBFC);
+    min-height: 150vh;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.489), #F7FBFC);
 
     max-width: 100vw;
     padding: 5vh 0vw;
 }
 
 
-#massSchedule>div:nth-of-type(1){
+#massSchedule>div:nth-of-type(1) {
     grid-row: 2;
     grid-column: 1;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(3,auto);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
     padding: 2vh 2vw;
     row-gap: 5vh;
     border-right: 6px solid #2F3E46;
 }
+
 /* images */
-#massSchedule>div:nth-of-type(1)>div:nth-child(1){
+#massSchedule>div:nth-of-type(1)>div:nth-child(1) {
     grid-row: 1/span 2;
     grid-column: 1/span 2;
 }
 
-#massSchedule>div:nth-of-type(1)>div:nth-child(2){
+#massSchedule>div:nth-of-type(1)>div:nth-child(2) {
     grid-row: 1 / span 2;
     grid-column: 3 / span 2;
     align-self: center;
 }
-#massSchedule>div:nth-of-type(1)>div:nth-child(3){
-    grid-row:2/span 2 ;
+
+#massSchedule>div:nth-of-type(1)>div:nth-child(3) {
+    grid-row: 2/span 2;
     grid-column: 1/span 4;
-    align-self:self-end;
+    align-self: self-end;
     justify-self: center;
 }
 
-#massSchedule>div:nth-of-type(1)>div:nth-child(1)>img{
+#massSchedule>div:nth-of-type(1)>div:nth-child(1)>img {
     max-width: 35vw;
     height: auto;
 }
 
-#massSchedule>div:nth-of-type(1)>div:nth-child(2)>img{
+#massSchedule>div:nth-of-type(1)>div:nth-child(2)>img {
     max-height: 50vh;
 }
-#massSchedule>div:nth-of-type(1)>div:nth-child(3)>img{
+
+#massSchedule>div:nth-of-type(1)>div:nth-child(3)>img {
     max-width: 40vw;
 }
 
 /* details */
-#massSchedule>div:nth-of-type(2){
+#massSchedule>div:nth-of-type(2) {
     grid-row: 2;
     grid-column: 2;
     padding: 0vh 2vw;
@@ -376,54 +390,55 @@ footer>div>h4{
     justify-content: space-evenly;
 }
 
-#massSchedule h3{
+#massSchedule h3 {
     font-size: 2vw;
     padding-top: 5vh;
 }
 
-#massSchedule p{
+#massSchedule p {
     font-size: 1.5vw;
 }
 
-#massSchedule #mass{
+#massSchedule #mass {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: min-content min-content;
-    border:3px solid #2F3E46;
+    border: 3px solid #2F3E46;
     border-radius: 8px;
-    padding:0.5vh 2vw;
-    min-height:10vh;
+    padding: 0.5vh 2vw;
+    min-height: 10vh;
     align-content: end;
-    margin:1vh 0vw;
+    margin: 1vh 0vw;
     background-color: #f8fafc78;
 
 }
 
-#massSchedule #mass>p:nth-of-type(1){
+#massSchedule #mass>p:nth-of-type(1) {
     grid-column: 1;
     grid-row: 2;
     border-right: 3px solid #2F3E46;
 }
 
-#massSchedule #mass>p:nth-of-type(2){
+#massSchedule #mass>p:nth-of-type(2) {
     grid-column: 2;
     grid-row: 2;
     text-align: center;
 }
 
-#massSchedule #mass>p:nth-of-type(3){
+#massSchedule #mass>p:nth-of-type(3) {
     grid-column: 3;
     grid-row: 2;
     text-align: center;
 }
 
-#massSchedule #mass>h4{
+#massSchedule #mass>h4 {
     grid-column: 1/span 3;
     grid-row: 1;
     font-size: 3vw;
     align-self: end;
 }
-#massSchedule #mass>h4>small{
+
+#massSchedule #mass>h4>small {
     font-size: 1.5vw;
     color: #2F3E46;
     text-decoration: none;
@@ -433,72 +448,78 @@ footer>div>h4{
 /* ======================
     confession schedule
 ========================*/
-#confessionSch{
+#confessionSch {
     min-height: 50vh;
-    background-color:   rgba(0, 0, 0, 0.489);
+    background-color: rgba(0, 0, 0, 0.489);
     display: flex;
     justify-content: center;
     padding: 3vh 1vw;
 }
-#confessionSch>div{
+
+#confessionSch>div {
     background-color: #192434d8;
     border-radius: 25px;
     min-height: 75vh;
-    padding:3vh 3vw;
+    padding: 3vh 3vw;
     display: grid;
     grid-template-rows: min-content auto;
     grid-template-columns: 3fr 2fr;
-    border:5px solid #F7FBFC
+    border: 5px solid #F7FBFC
 }
 
-#confessionSch>div>div:nth-of-type(2) *{
+#confessionSch>div>div:nth-of-type(2) * {
     text-align: center;
     padding: 0vh 2vw;
     color: #F7FBFC;
 }
-#confessionSch h1>u, #confessionSch p{
+
+#confessionSch h1>u,
+#confessionSch p {
     color: #F7FBFC;
 }
-#confessionSch img{
+
+#confessionSch img {
     max-width: 35vw;
     width: 100%;
     height: auto;
     display: block;
 }
 
-#confessionSch>div>div:nth-of-type(1){
+#confessionSch>div>div:nth-of-type(1) {
     grid-column: 1/span 2;
     grid-row: 1;
     align-items: center;
-    text-align: center  ;
+    text-align: center;
 }
-#confessionSch>div>div:nth-of-type(3){
+
+#confessionSch>div>div:nth-of-type(3) {
     align-items: center;
     display: grid;
 }
 
-#confessionSch>div>div:nth-of-type(2){
+#confessionSch>div>div:nth-of-type(2) {
     padding: 3vh 1vw;
     display: flex;
     flex-direction: column;
 }
 
-#confessionSch>div>div:nth-of-type(2)>div{
-    border:3px dashed #F7FBFC;
-    padding:5vh 0vw;
+#confessionSch>div>div:nth-of-type(2)>div {
+    border: 3px dashed #F7FBFC;
+    padding: 5vh 0vw;
     border-radius: 15px;
 }
 
 /* the details of the confession schedule */
-#confessionSch>div>div:nth-of-type(2)>div>p{
+#confessionSch>div>div:nth-of-type(2)>div>p {
     font-size: 2.5vw;
 }
+
 /* the details of the confession schedule */
-#confessionSch>div i{
+#confessionSch>div i {
     font-size: 1.15vw;
 }
 
-#confessionSch>div>div:nth-of-type(2)>p{
+#confessionSch>div>div:nth-of-type(2)>p {
     align-self: center;
     margin-top: auto;
     margin-bottom: auto;
@@ -507,55 +528,57 @@ footer>div>h4{
 /* ======================
         holy hour
 ========================*/
-#holyHour{
+#holyHour {
 
-    background-image: 
+    background-image:
         linear-gradient(to bottom, rgba(0, 0, 0, 0.489), #c9480263),
         url('../image/church_3.png');
 
-    min-height:100vh;
+    min-height: 100vh;
 
     background-position: center;
     background-repeat: no-repeat;
 
     display: flex;
-    flex-direction: column;   /* stack vertically */
-    justify-content: center;  /* center vertically */
-    align-items: center; 
+    flex-direction: column;
+    /* stack vertically */
+    justify-content: center;
+    /* center vertically */
+    align-items: center;
 }
 
-#holyHour *{
+#holyHour * {
     color: #F7FBFC;
     text-align: center;
 }
 
-#holyHour>h1{
+#holyHour>h1 {
     font-size: 10vw;
     padding: 0%;
 }
 
-#holyHour>p:nth-of-type(1){
+#holyHour>p:nth-of-type(1) {
     font-size: 1vw;
 }
 
-#holyHour>div{
+#holyHour>div {
     padding-top: 15vh;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 99vw;
 }
 
-#holyHour>div img{
+#holyHour>div img {
     width: 5vw;
     box-shadow: none;
 }
 
-#holyHour>div>div:nth-of-type(2){
+#holyHour>div>div:nth-of-type(2) {
     border-left: 5px solid #F7FBFC;
     border-right: 5px solid #F7FBFC;
 }
 
-#holyHour>div p{
+#holyHour>div p {
     font-size: 1.5vw;
     padding: 3vh;
 }
@@ -563,48 +586,157 @@ footer>div>h4{
 /*============================
             clergy  
 =============================*/
+#contactMenu >div{
+    min-height: 105vh;
+    display: grid;
+    grid-template-rows: 3fr 1fr 1fr;
+    text-align: center;
+    place-items: center;
+}
 
-#mainParish{
+#contactMenu::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('../image/background_1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(2px);
+    transform: scale(1.15);
+    z-index: -1;
+}
+
+#contactMenu>div:nth-child(1)>h1 {
+    text-align: center;
+    align-self: self-end;
+    font-size: 10vw;
+}
+
+#contactMenu>div:nth-child(1)>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 100vw;
+    min-width: 90vw;
+}
+
+#contactMenu>div:nth-child(1) a {
+    font-size: 2vw;
+    border: solid 5px #2F3E46;
+    border-radius: 3vw;
+    min-width: 20vw;
+    text-decoration: none;
+    background-color: #f8fafc2e;
+}
+
+#officeDirectory {
+    background-color: #192434c0;
+    color: #F7FBFC;
+    padding: 5vh 5vw;
+    border-top: 3px solid #F7FBFC;
+}
+
+#officeDirectory h1 {
+    font-size: 5vw;
+    padding-bottom: 4vh;
+    border-bottom: 5px solid #F7FBFC;
+    margin-bottom: 4vh;
+}
+
+.directoryList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 3vw;
+    row-gap: 3vh;
+}
+
+.directoryItem {
+    border: 3px solid #F7FBFC;
+    padding: 2vw;
+}
+
+#officeHours {
+    grid-row: 1/span 2;
+    grid-column: 2;
+}
+
+.directoryItem h3 {
+    font-size: 1.75vw;
+    padding-bottom: 1.5vh;
+}
+
+.directoryItem p {
+    font-size: 1.1vw;
+    padding-top: 0.75vh;
+}
+
+.officeHoursTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1vw;
+}
+
+.officeHoursTable td {
+    padding: 1vh 0.5vw;
+    border-bottom: 1px solid #f7fbfc55;
+    text-align: left;
+}
+
+.officeHoursTable tr:last-child td {
+    border-bottom: none;
+}
+
+.officeHoursTable td:first-child {
+    font-weight: bold;
+    width: 30%;
+}
+
+#mainParish {
     background-color: #192434;
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 105vh;
     padding: 5vh 2vw;
     column-gap: 3vw;
-    background-image: url('../image/father_kenson.png');
+    background-image: url('../image/placeholder.jpg');
     background-position: 10% center;
     background-repeat: no-repeat;
     min-height: 105vh;
     background-size: 40vw auto;
+    border-top: 3px solid #F7FBFC;
 }
 
-#mainParish *, #priest *{
+#mainParish *,
+#priest *, #officeDirectory * {
     color: #F7FBFC;
 }
 
-#mainParish>div{
+#mainParish>div {
     grid-column: 2;
     display: flex;
     flex-direction: column;
 }
 
-#mainParish h1{
+#mainParish h1 {
     font-size: 10vw;
     border-bottom: 5px solid #F7FBFC;
 }
 
-#mainParish h2{
+#mainParish h2 {
     padding-top: 10vh;
     padding-bottom: 2.5vh;
     font-size: 3vw;
 }
 
-#mainParish p{
+#mainParish p {
     padding-top: 0.5vh;
     font-size: 1.25vw;
 }
 
-#otherParishPriests{
+#otherParishPriests {
     background-color: #192434;
     min-width: 95vw;
     display: flex;
@@ -616,34 +748,35 @@ footer>div>h4{
     background-size: 100%;
 }
 
-#priest{
+#priest {
     min-height: 75vh;
     display: flex;
     flex-direction: column;
     row-gap: 1vh;
 }
 
-#priest img{
+#priest img {
     box-shadow: none;
     max-width: 25vw;
 }
 
-#priest>p, #priest>h3{
+#priest>p,
+#priest>h3 {
     text-align: left;
 }
 
-#priest>h3{
+#priest>h3 {
     padding-top: 2.5vh 0vw;
     font-size: 2vw;
 }
 
-#priest>div>p{
-    border:3px solid #F7FBFC;
+#priest>div>p {
+    border: 3px solid #F7FBFC;
     min-height: 5vh;
-    padding:1vh 1vw;
+    padding: 1vh 1vw;
 }
 
-#priest>div{
+#priest>div {
     display: flex;
     flex-direction: column;
     row-gap: 0.5vh;
@@ -684,7 +817,6 @@ footer>div>h4{
 .sacramentMenue {
     grid-column: 1;
     display: grid;
-
     grid-template-rows: 2fr 1fr 3fr;
     min-height: 105vh;
     background-image: url('../image/left.png');
@@ -693,7 +825,6 @@ footer>div>h4{
     background-repeat: no-repeat;
     background-position: right bottom;
     padding: 4vw 4vh;
-
 }
 
 .pastroalMenue {
@@ -710,62 +841,82 @@ footer>div>h4{
 }
 
 /* text alignment per side */
-.sacramentMenue * { text-align: left; }
-.pastroalMenue * { text-align: right; }
+.sacramentMenue * {
+    text-align: left;
+}
+
+.pastroalMenue * {
+    text-align: right;
+}
 
 /* headings */
-.sacramentMenue h1, .pastroalMenue h1 {
+.sacramentMenue h1,
+.pastroalMenue h1 {
     font-size: clamp(4rem, 6.5vw, 7rem);
     line-height: 1;
     padding: 3vh 0vw;
     margin-bottom: 0.5rem;
-    align-self: flex-end;   
+    align-self: flex-end;
 }
 
-.sacramentMenue h1 { color: #e8d9b5; }
-.pastroalMenue h1  { color: #192434; }
+.sacramentMenue h1 {
+    color: #e8d9b5;
+}
+
+.pastroalMenue h1 {
+    color: #192434;
+}
 
 /* subtitle */
-.sacramentMenue p, .pastroalMenue p {
+.sacramentMenue p,
+.pastroalMenue p {
     font-size: clamp(0.75rem, 1.1vw, 1rem);
     letter-spacing: 0.08em;
     margin-bottom: 3rem;
     opacity: 0.6;
 }
 
-.sacramentMenue p { color: #e8d9b5; }
-.pastroalMenue p  { color: #192434; }
+.sacramentMenue p {
+    color: #e8d9b5;
+}
+
+.pastroalMenue p {
+    color: #192434;
+}
 
 /* link container — pushed to bottom with margin-top auto */
-.sacramentMenue > div, .pastroalMenue > div {
+.sacramentMenue>div,
+.pastroalMenue>div {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-top: auto;      /* pushes links to bottom of panel */
+    margin-top: auto;
     padding-bottom: 2rem;
 }
 
-.sacramentMenue > div > div,
-.pastroalMenue > div > div {
+.sacramentMenue>div>div,
+.pastroalMenue>div>div {
     display: flex;
-    flex-direction: column;        /* links sit side by side in each row */
+    flex-direction: column;
     gap: 0.75rem;
     background: none;
-    flex-wrap: wrap;            /* wraps if screen is too narrow */
+    flex-wrap: wrap;
 }
-.pastroalMenue > div > div {
+
+.pastroalMenue>div>div {
     align-items: flex-end;
 }
 
-  /* rows left-aligned */
-.sacramentMenue a, .pastroalMenue a {
+/* rows left-aligned */
+.sacramentMenue a,
+.pastroalMenue a {
     font-size: clamp(0.65rem, 0.9vw, 0.85rem);
     letter-spacing: 0.1em;
     text-decoration: none;
     opacity: 1;
     width: fit-content;
     padding: 0.4rem 1rem;
-    border: 1px solid;          /* inherits color from the text color below */
+    border: 1px solid;
     transition: opacity 0.2s, background 0.2s;
 }
 
@@ -790,17 +941,27 @@ footer>div>h4{
 }
 
 
-#sacrament{
-    height:fit-content;
+#sacrament,
+#pastroal {
+    height: fit-content;
     display: grid;
-    grid-template-columns: 2fr 3fr;
     grid-template-rows: 1fr;
-    background-color: #192434;
     padding: 0vh 0vw;
     border-top: solid 3px #F7FBFC;
 }
 
-#sacrament>div:nth-of-type(1){
+#sacrament {
+    background-color: #192434;
+    grid-template-columns: 2fr 3fr;
+}
+
+#pastroal {
+    background-color: #e8d9b5;
+    grid-template-columns: 3fr 2fr;
+    border-top: solid 3px #2F3E46;
+}
+
+#sacrament>div:nth-of-type(1) {
     background-image: url("../image/church_2.jpg");
     border-top-right-radius: 100%;
     background-size: cover;
@@ -808,138 +969,230 @@ footer>div>h4{
     background-position: center;
 }
 
-
-#sacrament>div:nth-of-type(2){
+#sacrament>div:nth-of-type(2) {
     background-color: #192434;
     padding: 5vh 5vw;
 }
 
-#sacrament *{
-    color:#F7FBFC;
+#pastroal>div:nth-of-type(2) {
+    background-image: url("../image/church_donation_bg.jpg");
+    border-top-left-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-#sacrament h3{
-    font-size:clamp(2.5rem,3.5vw, 4.5rem);
+
+#pastroal>div:nth-of-type(1) {
+    background-color: #e8d9b5;
+    padding: 5vh 5vw;
+}
+
+#sacrament * {
+    color: #F7FBFC;
+}
+
+#pastroal * {
+    color: #192434;
+}
+
+#sacrament h3,
+#pastroal h3 {
+    font-size: clamp(2.5rem, 3.5vw, 4.5rem);
 }
 
 
-.sacramentpg main>section:not(.sacramentNPastroalMenue, #sacrament){
+.sacramentpg main>section:not(.sacramentNPastroalMenue, #sacrament, #pastroal, #house) {
     min-height: 105vh;
     background-color: #F7FBFC;
     padding: 5vh 5vw;
     border-top: 3px solid #192434;
+}
+
+#house{
+    height: max-content;
+    background-color: #F7FBFC;
+    padding: 5vh 5vw;
     border-top: 3px solid #192434;
 }
-
-.sacramentpg main>section:not(.sacramentNPastroalMenue) h2{
-    font-size:clamp(3.5rem,4.5vw, 5.5rem);
+.sacramentpg main>section:not(.sacramentNPastroalMenue) h2 {
+    font-size: clamp(3.5rem, 4.5vw, 5.5rem);
 }
 
-.sacramentpg main>section:not(.sacramentNPastroalMenue) p{
-    font-size:clamp(.5rem,1vw, 1.5rem);
+.sacramentpg main>section:not(.sacramentNPastroalMenue) p {
+    font-size: clamp(.5rem, 1vw, 1.5rem);
     padding: 3vh 0vw;
 }
 
 /* content on the left/right */
-.left{
-    display:grid;
+.left {
+    display: grid;
     grid-template-columns: 3fr 2fr;
-    column-gap:3vw;
+    column-gap: 3vw;
 }
 
-.right{
-    display:grid;
+.right {
+    display: grid;
     grid-template-columns: 2fr 3fr;
-    column-gap:3vw;
+    column-gap: 3vw;
 }
 
-#confession:before{
-    content: "";
-    position: absolute;
-    inset: 0;
 
-    background-image:
-        linear-gradient(#0a0a0ac7, #0a0a0ac7),
-        url('../image/confession_1.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    filter: blur(4px);
-    transform: scale(1.05);
-    z-index: -1;
-}
-#confession{
+/* shared dark section styles — confession, sick, wedding */
+#confession,
+#sick,
+#wedding,
+#infant,
+#rcia,
+#house, 
+#catechism{
+    position: relative;
+    overflow: hidden;
     background-color: transparent !important;
     border-top: 3px solid #F7FBFC !important;
 }
 
-#confession *, #sick *, #wedding *{
-    color:#F7FBFC
+#confession *,
+#sick *,
+#wedding *,
+#infant *,
+#rcia *,
+#house *,
+#catechism * {
+    color: #F7FBFC;
 }
 
-#confession div:nth-of-type(2), #sick>div:nth-of-type(1), #wedding>div:nth-of-type(2){
+#sick b,
+#wedding b {
+    color: #b64646;
+}
+
+#infant b, #rcia b, #catechism b, #house b {
+    color: #e8d9b5;
+}
+
+#infant p, #rcia div>div>p, #catechism p {
+    padding: 1.5vh 0vw;
+}
+
+/* shared ::before blurred backgrounds */
+#confession::before,
+#sick::before,
+#wedding::before,
+#infant::before,
+#rcia::before,
+#house::before,
+#catechism::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(4px);
+    transform: scale(1.05);
+    z-index: 0;
+}
+
+#confession::before {
+    background-image: linear-gradient(#0a0a0ac7, #0a0a0ac7), url('../image/confession_1.jpg');
+}
+
+#sick::before {
+    background-image: linear-gradient(#0a0a0ac7, #0a0a0ac7), url('../image/annoiting-of-the-sick.jpg');
+}
+
+#wedding::before {
+    background-image: linear-gradient(#0a0a0ac7, #0a0a0ac7), url('../image/wedding.jpg');
+}
+
+#infant::before {
+    background-image: linear-gradient(#0a0a0ac7, #0a0a0ac7), url('../image/infant_bap.jpg');
+}
+
+#rcia::before {
+    background-image: linear-gradient(#0a0a0ac7, #0a0a0ac7), url('../image/church_2.jpg');
+}
+
+#house::before {
+    background-image: linear-gradient(#0a0a0ac7, #0a0a0ac7), url('../image/church_priest.jpg');
+}
+
+#catechism::before {
+    background-image: linear-gradient(#0a0a0ac7, #0a0a0ac7), url('../image/cat_class.jpeg');
+}
+
+
+/* push content above blurred bg */
+#confession>*,
+#sick>*,
+#wedding>*,
+#infant>*,
+#rcia >*,
+#house >*,
+#catechism>*{
+    position: relative;
+    z-index: 1;
+}
+
+
+/* shared image container — right col for .left, left col for .right */
+#confession div:nth-of-type(2),
+#sick>div:nth-of-type(1),
+#wedding>div:nth-of-type(2),
+#infant>div:nth-of-type(1),
+#rcia>div:nth-of-type(1),
+#house>div:nth-of-type(1),
+#catechism>div:nth-of-type(2){
     display: grid;
     place-items: center;
     padding: 0.5vh 0vw;
 }
 
-#confession img, #sick img{
+#confession img,
+#sick img,
+#wedding img,
+#infant img,
+#rcia img,
+#house img,
+#catechism img {
     width: 35vw;
-    height:auto;
+    height: auto;
 }
 
-#confession>div>div>p{
-    font-size:clamp(0.75rem,1.5vw, 2.5rem);
-    text-align: center;
-}
-
-#confession>div>div, #wedding>div>div{
-    border:3px dashed #F7FBFC;
-    padding:2vh 0vw;
+/* shared schedule box */
+#confession>div>div,
+#wedding>div>div,
+#infant>div>div,
+#rcia>div>div,
+#house>div>div,
+#catechism>div>div{
+    border: 3px dashed #F7FBFC;
+    padding: 2vh 2vw;
     border-radius: 15px;
 }
 
-#confession h3, #wedding h3{
-    font-size:clamp(1.5rem,2.5vw, 3.5rem);
-    padding:2vh 0vw;
+/* shared h3 heading inside dark sections */
+#confession h3,
+#wedding h3,
+#infant h3,
+#rcia h3, 
+#house h3,
+#catechism h3{
+    font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+    padding: 2vh 0vw;
 }
 
-/* ANNOITING OF THE SICK */
-#sick b, #wedding b{
-    color:#b64646;
+#confession>div>div>p {
+    font-size: clamp(0.75rem, 1.5vw, 2.5rem);
+    text-align: center;
 }
 
-#sick:before{
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image:
-        linear-gradient(#0a0a0ac7, #0a0a0ac7),
-        url('../image/annoiting-of-the-sick.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    filter: blur(4px);
-    transform: scale(1.05);
-    z-index: -1;
-}
-#sick{
-    background-color: transparent !important;
-    border-top: 3px solid #F7FBFC !important;
-}
-
-#sick table{
+/* ANOINTING OF THE SICK — table spans full width */
+#sick table {
     grid-row: 2;
-    grid-column: 1/span 2;
+    grid-column: 1 / span 2;
 }
-#confession, #sick, #wedding {
-    position: relative;
-    overflow: hidden;
-}
+
 #hospitalTable {
     width: 100%;
     border-collapse: collapse;
@@ -948,7 +1201,8 @@ footer>div>h4{
     font-size: clamp(0.6rem, 0.85vw, 0.9rem);
 }
 
-#hospitalTable th, #hospitalTable td {
+#hospitalTable th,
+#hospitalTable td {
     padding: 1vh 1vw;
     text-align: left;
     border-bottom: 1px solid rgba(247, 251, 252, 0.2);
@@ -986,38 +1240,11 @@ footer>div>h4{
     width: 40%;
 }
 
-#wedding:before{
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image:
-        linear-gradient(#0a0a0ac7, #0a0a0ac7),
-        url('../image/wedding.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    filter: blur(4px);
-    transform: scale(1.05);
-    z-index: -1;
-}
-
-#wedding{
-    background-color: transparent !important;
-    border-top: 3px solid #F7FBFC !important;
-}
-
-#wedding>div>div {
-    padding:2vh 2vw;
-}
-
 /*============================
         donation page  
 =============================*/
 
-.donatepg{
+.donatepg {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.238), #c9480263), url('../image/church_donation_bg.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -1025,79 +1252,499 @@ footer>div>h4{
     background-position: center;
 }
 
-#donationTop{
+#donationTop {
     display: grid;
     min-height: 75vh;
     grid-template-rows: 3fr 1fr;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     padding: 3vh 3vw;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.238), #c9480263);
 }
 
-#donationTop>h1{
-    font-size:clamp(8px, 9vw, 12.5rem);
+#donationTop>h1 {
+    font-size: clamp(8px, 9vw, 12.5rem);
     color: #192434;
     align-self: end;
     justify-self: end;
 }
 
-#donationTop>p{
+#donationTop>p {
     grid-column: 1;
     grid-row: 2;
 }
 
-#donationInfo{
+#donationInfo {
     padding: 5vh 5vw;
     display: grid;
     min-height: fit-content;
     background: linear-gradient(to bottom, #c9480263, #fff4d6);
 }
 
-#donationInfo>div{
+#donationInfo>div {
     display: flex;
     flex-direction: column;
     background-color: #f7fbfc8e;
-    border:3px solid #192434;
+    border: 3px solid #192434;
     padding: 5vh 5vw;
     text-align: center;
     border-radius: 36px;
 }
 
-#donationInfo>div>div{
+#donationInfo>div>div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-#cash > img, #paynow>img{
+#cash>img,
+#paynow>img {
     box-shadow: none;
-    
+
 }
-#cash{
-    border-right:3px solid #192434;
+
+#cash {
+    border-right: 3px solid #192434;
 }
-#cash, #paynow{
+
+#cash,
+#paynow {
     padding: 3vh 2vw;
 }
-#donationInfo h1{
-    font-size:clamp(3rem,5vw, 5.5rem);
+
+#donationInfo h1 {
+    font-size: clamp(3rem, 5vw, 5.5rem);
     padding: 0vh 0vw 3vh 0vw;
 }
 
-#donationInfo h3{
-    font-size:clamp(2rem,2.5vw, 3.5rem);
+#donationInfo h3 {
+    font-size: clamp(2rem, 2.5vw, 3.5rem);
     padding: 1vh 0vw;
 }
 
-#donationInfo p{
+#donationInfo p {
     padding: 1vh 0vw;
 }
 
 
-#paynow div>p{
-    font-size:clamp(0.5rem,0.75vw, 1.5rem);
-    padding:1.5vh 0vw;
+#paynow div>p {
+    font-size: clamp(0.5rem, 0.75vw, 1.5rem);
+    padding: 1.5vh 0vw;
 }
 
-#paynow div>p:nth-of-type(1){
-    border:3px solid #b64646;
+#paynow div>p:nth-of-type(1) {
+    border: 3px solid #b64646;
+}
+
+/*============================
+        ministry overview
+=============================*/
+
+#ministryHero {
+    min-height: fit-content;
+    background-color: #192434;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3vh 5vw;
+}
+#ministryHero *{
+    text-align: center;
+}
+#ministryHero h1 {
+    font-size: clamp(4rem, 7.5vw, 9rem);
+    color: #e8d9b5;
+    line-height: 1;
+    border-bottom: 1px solid #e8d9b5;
+}
+
+#ministryHero p {
+    font-size: clamp(0.75rem, 0.75vw, 1rem);
+    color: #e8d9b5;
+    opacity: 0.6;
+    letter-spacing: 0.08em;
+    padding: 1vh 0;
+}
+
+/* 2x2 grid of category cards */
+#ministryGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: 80vh;
+}
+
+.ministry-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    overflow: hidden;
+    border: 1px solid #192434;
+    min-height: 40vh;
+}
+
+.ministry-card-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+    filter: brightness(0.45);
+}
+
+.ministry-card:hover .ministry-card-img {
+    transform: scale(1.04);
+    filter: brightness(0.55);
+}
+
+.ministry-card-body {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.ministry-card-body h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    color: #e8d9b5;
+    line-height: 1.1;
+}
+
+.ministry-card-body p {
+    font-size: clamp(0.65rem, 0.9vw, 0.9rem);
+    color: rgba(232, 217, 181, 0.65);
+    letter-spacing: 0.06em;
+    padding: 0.5rem 0 0 0;
+    margin: 0;
+}
+
+
+/*============================
+      Ministry Sub-pages
+=============================*/
+
+/* ---------- Hero ---------- */
+
+.ministrySubHero {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4vh 5vw;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.ministrySubHero *:not(a) {
+    text-align: center;
+}
+
+.ministrySubHero h1 {
+    font-size: clamp(3.5rem, 6vw, 7rem);
+    color: #F7FBFC;
+    line-height: 1;
+}
+
+.ministrySubHero p {
+    font-size: clamp(0.75rem, 1.1vw, 1rem);
+    color: rgba(247, 251, 252, 0.6);
+    letter-spacing: .08em;
+    padding-top: .5vh;
+}
+
+.ministryBack {
+    font-family: LexendExa_Font;
+    font-size: clamp(.65rem, .85vw, .9rem);
+    color: rgba(247,251,252,.7);
+    text-decoration: none;
+    letter-spacing: .08em;
+    margin-bottom: auto;
+    padding-top: 2vh;
+    transition: .2s;
+}
+
+.ministryBack:hover {
+    color: #F7FBFC;
+}
+
+.ministrySubContent {
+    background: #192434;
+    padding: 3vh 1vw;
+}
+
+.ministrySubContent h3{
+    color: #F1ECDB;
+    padding: 0vh 3vw;
+    font-size: clamp(1.65rem, 2.85vw, 3.9rem);
+}
+
+.ministryContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 4vh 5vw;
+    background: #192434;
+    border-top: 3px solid #F7FBFC;
+}
+
+.ministryContact p {
+    max-width: 50ch;
+    color: #e8d9b5;
+    font-size: clamp(.75rem,1vw,1rem);
+    opacity: .8;
+}
+
+.ministryContactBtn {
+    font-family: LexendExa_Font;
+    font-size: clamp(.65rem,.9vw,.85rem);
+    letter-spacing: .1em;
+    text-decoration: none;
+    color: #192434;
+    background: #e8d9b5;
+    border: 1px solid #e8d9b5;
+    padding: .75rem 2rem;
+    transition: .2s;
+}
+
+.ministryContactBtn:hover {
+    background: transparent;
+    color: #e8d9b5;
+}
+
+/*============================
+        Carousel
+=============================*/
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    padding-bottom:5vh;
+}
+
+.carousel-viewport {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    padding: 2.5vh .5vw;
+}
+.carousel-track {
+    display: flex;
+    gap: 1vw;
+    align-items: stretch;
+    will-change: transform;
+}
+
+.carousel-arrow {
+    width: clamp(1vw, 2vw, 3vw);
+    height: clamp(1vw, 2vw, 3vw);
+    flex-shrink: 0;
+    cursor: pointer;
+    background: transparent;
+    border: solid #F1ECDB;
+    border-width: 0 .45vw .45vw 0;
+}
+
+#nextBtn, #nextBtn1{
+    transform: rotate(-45deg);
+}
+
+#prevBtn, #prevBtn1 {
+    transform: rotate(135deg);
+}
+
+
+/*============================
+        Cards
+=============================*/
+
+.proj-card {
+    width: 18.5vw;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1vw;
+    background: #F7FBFC;
+    border: 1px solid rgba(25,36,52,.2);
+    transition: width .35s, transform .25s, box-shadow .25s;
+}
+
+.proj-card:hover:not(.open) {
+    transform: translateY(-4px);
+    box-shadow: 5px 10px 8px rgba(0,0,0,.15);
+}
+
+.proj-card.open {
+    width: 40vw;
+    box-shadow: 5px 10px 8px rgba(0,0,0,.15);
+    cursor: default;
+}
+
+.card-thumb,
+.card-thumb-placeholder {
+    width: 100%;
+    height: 40vh;
+    display: block;
+    flex-shrink: 0;
+}
+
+.card-thumb {
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.card-thumb-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3C1B0F;
+    color: #F1ECDB;
+    font-size: 2.5vw;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1rem 1.25rem;
+}
+
+.card-title {
+    font-family: Gloock_Font;
+    font-size: 1.25vw;
+    color: #192434;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.open .card-title {
+    white-space: normal;
+    font-size: 1.5vw;
+}
+
+.card-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height .35s, opacity .25s;
+}
+
+.open .card-detail {
+    max-height: 55vh;
+    opacity: 1;
+}
+
+.card-desc {
+    padding: 1vh 0;
+    font-size: 1.15vw;
+    line-height: 1.5;
+    color: #192434;
+}
+
+.card-link {
+    display: inline-block;
+    padding: 1vh 1vw;
+    border-radius: 1vw;
+    text-decoration: none;
+    font-size: 1vw;
+    color: #F1ECDB;
+    background: #192434;
+}
+
+.card-link:hover {
+    background: #2c3e50;
+}
+
+.tags {
+    display: none;
+}
+
+
+/*============================
+        abt page  
+=============================*/
+
+.abtPg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.238), #c9480263), url('../image/church_2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(4px);
+    transform: scale(1.15);
+    z-index: -1;
+}
+
+#abtMenu *{
+    color: #F7FBFC;
+}
+
+#abtMenu>div:nth-child(1)>h1 {
+    text-align: center;
+    align-self: self-end;
+    font-size: 10vw;
+}
+
+#abtMenu>div:nth-child(1)>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 100vw;
+    min-width: 90vw;
+}
+
+#abtMenu>div:nth-child(1) a {
+    font-size: 2vw;
+    border: solid 5px #F7FBFC;
+    border-radius: 3vw;
+    min-width: 20vw;
+    text-decoration: none;
+    background-color: #e8d9b52e;
+}
+
+#abtMenu >div{
+    min-height: 105vh;
+    display: grid;
+    grid-template-rows: 3fr 1fr 1fr;
+    text-align: center;
+    place-items: center;
+}
+
+.abtPg section:not(#abtMenu){
+    min-height: 105vh;
+    background-color: #e8d9b5;
+    border-top: 3px solid #F7FBFC;
+}
+
+
+#abtChurch{
+    background-color: transparent !important; 
+    background-image: linear-gradient(to bottom,transparent , #3c3024c7);
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr;
+    padding: 5vh 3vw;
+}
+#abtChurch img{
+    max-width: 35vw;
+}
+#abtChurch *{
+    text-align: left;
+    color: #F7FBFC;
+}
+#abtChurch h1{
+    font-size: clamp(5.6rem, 7.85vw, 8.9rem);
 }
