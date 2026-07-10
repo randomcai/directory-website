@@ -1,7 +1,6 @@
 /*=======================
          fonts
 =======================*/
-/* place holder first */
 @font-face {
     font-family: Gloock_Font;
     src: url("../font/Gloock-Regular.woff");
@@ -26,7 +25,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* make sure no horizontal over fill */
 html,
 body {
     max-width: 100%;
@@ -86,22 +84,19 @@ td {
 
 .menuGrid div:nth-child(2) * {
     text-align: left;
-    font-size: 1.75vw;
+    font-size: clamp(0.85rem, 1.75vw, 1.75rem);
     font-family: Gloock_Font;
 }
 
-.menuGrid div:nth-child(2) a{
+.menuGrid div:nth-child(2) a {
     text-decoration: none;
 }
 
 /* nav bar */
 .menuGrid nav {
     display: flex;
-    /* CHANGE from grid */
     justify-content: space-evenly;
-    /* even spacing automatically */
     align-items: flex-end;
-    /* all text bottom-aligned */
     width: 100%;
 }
 
@@ -127,12 +122,10 @@ td {
 /* ======================
             HOME
 ========================*/
-
 body.indexpg::before {
     content: "";
     position: fixed;
     inset: 0;
-
     background-image: url('../image/background_2.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -155,10 +148,11 @@ footer {
     border-top: 2px solid #2F3E46;
     background-color: #F7FBFC;
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(2, auto);
     max-width: 100vw;
-    padding: 1vh 0vw;
+    padding: 2rem 3vw 1rem 3vw;
+    gap: 1.5rem;
 }
 
 footer img {
@@ -168,87 +162,91 @@ footer img {
 }
 
 /* specific grid pos */
-footer>div:nth-of-type(2) {
-    grid-column: 2;
-    grid-row: 1/span 2;
-    text-align: left;
-}
-
-footer>div:nth-of-type(3) {
-    grid-column: 3;
-    grid-row: 1/span 2;
-    text-align: left;
-}
-
-footer>div:nth-of-type(4) {
-    grid-column: 4;
-    grid-row: 1/span 2;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-footer>div:nth-of-type(4)>div {
-    display: flex;
-    justify-content: flex-start;
-}
-
-footer>div:nth-of-type(3)>img {
-    height: 15vh;
-    width: auto;
+footer>.logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
 }
 
 footer>h6 {
     grid-row: 2;
     grid-column: 1;
     justify-self: center;
-    max-width: 25vw;
     text-align: center;
+    font-size: clamp(0.5rem, 0.6vw, 0.75rem);
+    opacity: 0.6;
 }
 
-footer>.logo {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-    max-width: 25vw;
+footer>div:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    text-align: left;
+}
+
+footer>div:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    text-align: left;
+}
+
+footer>div:nth-of-type(4) {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer>div:nth-of-type(4)>div {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+footer>div:nth-of-type(3)>img {
+    height: 15vh;
+    width: auto;
+    margin-top: 1rem;
 }
 
 footer img {
-    width: 7.5vw;
+    width: clamp(50px, 7.5vw, 100px);
 }
 
 footer nav {
-    display: grid;
-    grid-template-rows: repeat(6, auto);
-    row-gap: 1.25vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 footer button {
     text-align: left;
-    font-size: 0.75vw;
+    font-size: clamp(0.6rem, 0.75vw, 0.85rem);
     border: none;
+    color: #2F3E46;
+    padding: 0;
+    background: none;
+}
+
+footer nav button a {
+    text-decoration: none;
     color: #2F3E46;
 }
 
-/* nav for diff page of the website*/
-footer button:nth-of-type(1) {
-    grid-row: 1;
-}
-
-footer button:nth-of-type(2) {
-    grid-row: 2;
-}
-
-footer button:nth-of-type(3) {
-    grid-row: 3;
+footer nav button a:hover {
+    opacity: 0.6;
 }
 
 footer>div>h4 {
-    padding: 1vh 0vw;
-    font-size: 1.25vw;
+    padding: 0 0 1rem 0;
+    font-size: clamp(0.85rem, 1.25vw, 1.25rem);
 }
 
+footer>div>p {
+    font-size: clamp(0.6rem, 0.85vw, 0.9rem);
+}
 
 /* ======================
          ccs tile
@@ -258,15 +256,24 @@ footer>div>h4 {
     height: clamp(40px, 5vw, 75px);
     background-image: url('../image/socialSprites.jpg');
     background-repeat: no-repeat;
-    background-size: 300% auto; /* 3 icons wide, so 300% */
+    background-size: 300% auto;
     display: inline-block;
     text-decoration: none;
     border-radius: 50%;
 }
 
-.web { background-position: 0 0; }
-.fb  { background-position: 50% 0; }  /* 50% = second of 3 icons */
-.ig  { background-position: 100% 0; } /* 100% = third icon */
+.web {
+    background-position: 0 0;
+}
+
+.fb {
+    background-position: 50% 0;
+}
+
+.ig {
+    background-position: 100% 0;
+}
+
 /* ======================
         home article
 ========================*/
@@ -284,13 +291,12 @@ footer>div>h4 {
     text-align: center;
     place-items: center;
     border-bottom: 2px solid #192434;
-
 }
 
 #home>div:nth-child(1)>h1 {
     text-align: center;
     align-self: self-end;
-    font-size: 10vw;
+    font-size: clamp(3rem, 10vw, 10rem);
 }
 
 #home>div:nth-child(1)>div {
@@ -302,14 +308,13 @@ footer>div>h4 {
 }
 
 #home>div:nth-child(1) a {
-    font-size: 2vw;
+    font-size: clamp(0.85rem, 2vw, 2rem);
     border: solid 5px #2F3E46;
     border-radius: 3vw;
     min-width: 20vw;
     text-decoration: none;
     background-color: #f8fafc2e;
 }
-
 
 #massSchedule h1,
 #holyHour h1,
@@ -318,12 +323,12 @@ footer>div>h4 {
     grid-column: 1/span 2;
     text-align: center;
     max-height: fit-content;
-    font-size: 4.5vw;
+    font-size: clamp(1.75rem, 4.5vw, 5rem);
     padding: 2vh 2vw;
 }
 
 /* ======================
-        mass schedule
+         mass schedule
 ========================*/
 #massSchedule {
     display: grid;
@@ -331,11 +336,9 @@ footer>div>h4 {
     grid-template-rows: min-content auto;
     min-height: 150vh;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.489), #F7FBFC);
-
     max-width: 100vw;
     padding: 5vh 0vw;
 }
-
 
 #massSchedule>div:nth-of-type(1) {
     grid-row: 2;
@@ -391,12 +394,12 @@ footer>div>h4 {
 }
 
 #massSchedule h3 {
-    font-size: 2vw;
+    font-size: clamp(1rem, 2vw, 2.5rem);
     padding-top: 5vh;
 }
 
 #massSchedule p {
-    font-size: 1.5vw;
+    font-size: clamp(0.75rem, 1.5vw, 1.75rem);
 }
 
 #massSchedule #mass {
@@ -410,7 +413,6 @@ footer>div>h4 {
     align-content: end;
     margin: 1vh 0vw;
     background-color: #f8fafc78;
-
 }
 
 #massSchedule #mass>p:nth-of-type(1) {
@@ -434,16 +436,15 @@ footer>div>h4 {
 #massSchedule #mass>h4 {
     grid-column: 1/span 3;
     grid-row: 1;
-    font-size: 3vw;
+    font-size: clamp(1.5rem, 3vw, 4rem);
     align-self: end;
 }
 
 #massSchedule #mass>h4>small {
-    font-size: 1.5vw;
+    font-size: clamp(0.75rem, 1.5vw, 2rem);
     color: #2F3E46;
     text-decoration: none;
 }
-
 
 /* ======================
     confession schedule
@@ -464,7 +465,7 @@ footer>div>h4 {
     display: grid;
     grid-template-rows: min-content auto;
     grid-template-columns: 3fr 2fr;
-    border: 5px solid #F7FBFC
+    border: 5px solid #F7FBFC;
 }
 
 #confessionSch>div>div:nth-of-type(2) * {
@@ -493,6 +494,7 @@ footer>div>h4 {
 }
 
 #confessionSch>div>div:nth-of-type(3) {
+    padding: 2vh 0vw;
     align-items: center;
     display: grid;
 }
@@ -509,14 +511,12 @@ footer>div>h4 {
     border-radius: 15px;
 }
 
-/* the details of the confession schedule */
 #confessionSch>div>div:nth-of-type(2)>div>p {
-    font-size: 2.5vw;
+    font-size: clamp(1rem, 2.5vw, 3rem);
 }
 
-/* the details of the confession schedule */
 #confessionSch>div i {
-    font-size: 1.15vw;
+    font-size: clamp(0.6rem, 1.15vw, 1.5rem);
 }
 
 #confessionSch>div>div:nth-of-type(2)>p {
@@ -529,21 +529,13 @@ footer>div>h4 {
         holy hour
 ========================*/
 #holyHour {
-
-    background-image:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.489), #c9480263),
-        url('../image/church_3.png');
-
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.489), #c9480263), url('../image/church_3.png');
     min-height: 100vh;
-
     background-position: center;
     background-repeat: no-repeat;
-
     display: flex;
     flex-direction: column;
-    /* stack vertically */
     justify-content: center;
-    /* center vertically */
     align-items: center;
 }
 
@@ -553,12 +545,12 @@ footer>div>h4 {
 }
 
 #holyHour>h1 {
-    font-size: 10vw;
+    font-size: clamp(3rem, 10vw, 12rem);
     padding: 0%;
 }
 
 #holyHour>p:nth-of-type(1) {
-    font-size: 1vw;
+    font-size: clamp(0.65rem, 1vw, 1.25rem);
 }
 
 #holyHour>div {
@@ -569,7 +561,7 @@ footer>div>h4 {
 }
 
 #holyHour>div img {
-    width: 5vw;
+    width: clamp(30px, 5vw, 75px);
     box-shadow: none;
 }
 
@@ -579,14 +571,14 @@ footer>div>h4 {
 }
 
 #holyHour>div p {
-    font-size: 1.5vw;
+    font-size: clamp(0.75rem, 1.5vw, 1.75rem);
     padding: 3vh;
 }
 
 /*============================
             clergy  
 =============================*/
-#contactMenu >div{
+#contactMenu>div {
     min-height: 105vh;
     display: grid;
     grid-template-rows: 3fr 1fr 1fr;
@@ -611,7 +603,7 @@ footer>div>h4 {
 #contactMenu>div:nth-child(1)>h1 {
     text-align: center;
     align-self: self-end;
-    font-size: 10vw;
+    font-size: clamp(3rem, 10vw, 12rem);
 }
 
 #contactMenu>div:nth-child(1)>div {
@@ -623,7 +615,7 @@ footer>div>h4 {
 }
 
 #contactMenu>div:nth-child(1) a {
-    font-size: 2vw;
+    font-size: clamp(0.85rem, 2vw, 2.5rem);
     border: solid 5px #2F3E46;
     border-radius: 3vw;
     min-width: 20vw;
@@ -639,7 +631,7 @@ footer>div>h4 {
 }
 
 #officeDirectory h1 {
-    font-size: 5vw;
+    font-size: clamp(2rem, 5vw, 6rem);
     padding-bottom: 4vh;
     border-bottom: 5px solid #F7FBFC;
     margin-bottom: 4vh;
@@ -664,19 +656,19 @@ footer>div>h4 {
 }
 
 .directoryItem h3 {
-    font-size: 1.75vw;
+    font-size: clamp(0.9rem, 1.75vw, 2.25rem);
     padding-bottom: 1.5vh;
 }
 
 .directoryItem p {
-    font-size: 1.1vw;
+    font-size: clamp(0.65rem, 1.1vw, 1.4rem);
     padding-top: 0.75vh;
 }
 
 .officeHoursTable {
     width: 100%;
     border-collapse: collapse;
-    font-size: 1.1vw;
+    font-size: clamp(0.65rem, 1.1vw, 1.4rem);
 }
 
 .officeHoursTable td {
@@ -704,36 +696,51 @@ footer>div>h4 {
     background-image: url('../image/placeholder.jpg');
     background-position: 10% center;
     background-repeat: no-repeat;
-    min-height: 105vh;
     background-size: 40vw auto;
     border-top: 3px solid #F7FBFC;
 }
 
 #mainParish *,
-#priest *, #officeDirectory * {
+#priest *,
+#officeDirectory * {
     color: #F7FBFC;
 }
 
-#mainParish>div {
+#mainParish>div:nth-of-type(1) {
     grid-column: 2;
     display: flex;
     flex-direction: column;
 }
 
 #mainParish h1 {
-    font-size: 10vw;
+    font-size: clamp(3rem, 10vw, 12rem);
     border-bottom: 5px solid #F7FBFC;
 }
 
 #mainParish h2 {
     padding-top: 10vh;
     padding-bottom: 2.5vh;
-    font-size: 3vw;
+    font-size: clamp(1.25rem, 3vw, 4rem);
 }
 
 #mainParish p {
     padding-top: 0.5vh;
-    font-size: 1.25vw;
+    font-size: clamp(0.7rem, 1.25vw, 1.5rem);
+}
+
+
+#mainPriestPhoto {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh 2vw;
+}
+
+#mainPriestPhoto img {
+    max-width: 35vw;
+    height: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
+    border-radius: 6px;
 }
 
 #otherParishPriests {
@@ -766,8 +773,7 @@ footer>div>h4 {
 }
 
 #priest>h3 {
-    padding-top: 2.5vh 0vw;
-    font-size: 2vw;
+    font-size: clamp(1rem, 2vw, 2.5rem);
 }
 
 #priest>div>p {
@@ -781,7 +787,6 @@ footer>div>h4 {
     flex-direction: column;
     row-gap: 0.5vh;
 }
-
 
 #horizontalGallery {
     background-color: #192434;
@@ -804,7 +809,6 @@ footer>div>h4 {
     display: block;
     flex-shrink: 0;
 }
-
 
 /*============================
             sacrament  
@@ -852,7 +856,7 @@ footer>div>h4 {
 /* headings */
 .sacramentMenue h1,
 .pastroalMenue h1 {
-    font-size: clamp(4rem, 6.5vw, 7rem);
+    font-size: clamp(2.5rem, 6.5vw, 7rem);
     line-height: 1;
     padding: 3vh 0vw;
     margin-bottom: 0.5rem;
@@ -870,7 +874,7 @@ footer>div>h4 {
 /* subtitle */
 .sacramentMenue p,
 .pastroalMenue p {
-    font-size: clamp(0.75rem, 1.1vw, 1rem);
+    font-size: clamp(0.65rem, 1.1vw, 1rem);
     letter-spacing: 0.08em;
     margin-bottom: 3rem;
     opacity: 0.6;
@@ -884,7 +888,7 @@ footer>div>h4 {
     color: #192434;
 }
 
-/* link container — pushed to bottom with margin-top auto */
+/* link container */
 .sacramentMenue>div,
 .pastroalMenue>div {
     display: flex;
@@ -907,10 +911,10 @@ footer>div>h4 {
     align-items: flex-end;
 }
 
-/* rows left-aligned */
+/* links */
 .sacramentMenue a,
 .pastroalMenue a {
-    font-size: clamp(0.65rem, 0.9vw, 0.85rem);
+    font-size: clamp(0.6rem, 0.9vw, 0.85rem);
     letter-spacing: 0.1em;
     text-decoration: none;
     opacity: 1;
@@ -939,7 +943,6 @@ footer>div>h4 {
     background: rgba(25, 36, 52, 0.08);
     border-color: #192434;
 }
-
 
 #sacrament,
 #pastroal {
@@ -997,9 +1000,8 @@ footer>div>h4 {
 
 #sacrament h3,
 #pastroal h3 {
-    font-size: clamp(2.5rem, 3.5vw, 4.5rem);
+    font-size: clamp(1.5rem, 3.5vw, 4.5rem);
 }
-
 
 .sacramentpg main>section:not(.sacramentNPastroalMenue, #sacrament, #pastroal, #house) {
     min-height: 105vh;
@@ -1008,18 +1010,19 @@ footer>div>h4 {
     border-top: 3px solid #192434;
 }
 
-#house{
+#house {
     height: max-content;
     background-color: #F7FBFC;
     padding: 5vh 5vw;
     border-top: 3px solid #192434;
 }
+
 .sacramentpg main>section:not(.sacramentNPastroalMenue) h2 {
-    font-size: clamp(3.5rem, 4.5vw, 5.5rem);
+    font-size: clamp(2rem, 4.5vw, 5.5rem);
 }
 
 .sacramentpg main>section:not(.sacramentNPastroalMenue) p {
-    font-size: clamp(.5rem, 1vw, 1.5rem);
+    font-size: clamp(0.65rem, 1vw, 1.5rem);
     padding: 3vh 0vw;
 }
 
@@ -1036,15 +1039,14 @@ footer>div>h4 {
     column-gap: 3vw;
 }
 
-
-/* shared dark section styles — confession, sick, wedding */
+/* shared dark section styles */
 #confession,
 #sick,
 #wedding,
 #infant,
 #rcia,
-#house, 
-#catechism{
+#house,
+#catechism {
     position: relative;
     overflow: hidden;
     background-color: transparent !important;
@@ -1066,11 +1068,16 @@ footer>div>h4 {
     color: #b64646;
 }
 
-#infant b, #rcia b, #catechism b, #house b {
+#infant b,
+#rcia b,
+#catechism b,
+#house b {
     color: #e8d9b5;
 }
 
-#infant p, #rcia div>div>p, #catechism p {
+#infant p,
+#rcia div>div>p,
+#catechism p {
     padding: 1.5vh 0vw;
 }
 
@@ -1121,28 +1128,26 @@ footer>div>h4 {
     background-image: linear-gradient(#0a0a0ac7, #0a0a0ac7), url('../image/cat_class.jpeg');
 }
 
-
 /* push content above blurred bg */
 #confession>*,
 #sick>*,
 #wedding>*,
 #infant>*,
-#rcia >*,
-#house >*,
-#catechism>*{
+#rcia>*,
+#house>*,
+#catechism>* {
     position: relative;
     z-index: 1;
 }
 
-
-/* shared image container — right col for .left, left col for .right */
+/* shared image container */
 #confession div:nth-of-type(2),
 #sick>div:nth-of-type(1),
 #wedding>div:nth-of-type(2),
 #infant>div:nth-of-type(1),
 #rcia>div:nth-of-type(1),
 #house>div:nth-of-type(1),
-#catechism>div:nth-of-type(2){
+#catechism>div:nth-of-type(2) {
     display: grid;
     place-items: center;
     padding: 0.5vh 0vw;
@@ -1165,7 +1170,7 @@ footer>div>h4 {
 #infant>div>div,
 #rcia>div>div,
 #house>div>div,
-#catechism>div>div{
+#catechism>div>div {
     border: 3px dashed #F7FBFC;
     padding: 2vh 2vw;
     border-radius: 15px;
@@ -1175,10 +1180,10 @@ footer>div>h4 {
 #confession h3,
 #wedding h3,
 #infant h3,
-#rcia h3, 
+#rcia h3,
 #house h3,
-#catechism h3{
-    font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+#catechism h3 {
+    font-size: clamp(1rem, 2.5vw, 3.5rem);
     padding: 2vh 0vw;
 }
 
@@ -1198,7 +1203,7 @@ footer>div>h4 {
     border-collapse: collapse;
     border: 1px solid rgba(247, 251, 252, 0.6);
     margin-top: 2vh;
-    font-size: clamp(0.6rem, 0.85vw, 0.9rem);
+    font-size: clamp(0.55rem, 0.85vw, 0.9rem);
 }
 
 #hospitalTable th,
@@ -1215,7 +1220,7 @@ footer>div>h4 {
     letter-spacing: 0.06em;
     border-bottom: 1px solid rgba(247, 251, 252, 0.6);
     padding-bottom: 1.5vh;
-    font-size: clamp(0.75rem, 1vw, 1.5rem);
+    font-size: clamp(0.65rem, 1vw, 1.25rem);
 }
 
 #hospitalTable tr:last-child td {
@@ -1243,7 +1248,6 @@ footer>div>h4 {
 /*============================
         donation page  
 =============================*/
-
 .donatepg {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.238), #c9480263), url('../image/church_donation_bg.jpg');
     background-size: cover;
@@ -1262,7 +1266,7 @@ footer>div>h4 {
 }
 
 #donationTop>h1 {
-    font-size: clamp(8px, 9vw, 12.5rem);
+    font-size: clamp(2rem, 9vw, 12.5rem);
     color: #192434;
     align-self: end;
     justify-self: end;
@@ -1298,7 +1302,6 @@ footer>div>h4 {
 #cash>img,
 #paynow>img {
     box-shadow: none;
-
 }
 
 #cash {
@@ -1311,19 +1314,18 @@ footer>div>h4 {
 }
 
 #donationInfo h1 {
-    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-size: clamp(2rem, 5vw, 5.5rem);
     padding: 0vh 0vw 3vh 0vw;
 }
 
 #donationInfo h3 {
-    font-size: clamp(2rem, 2.5vw, 3.5rem);
+    font-size: clamp(1.25rem, 2.5vw, 3.5rem);
     padding: 1vh 0vw;
 }
 
 #donationInfo p {
     padding: 1vh 0vw;
 }
-
 
 #paynow div>p {
     font-size: clamp(0.5rem, 0.75vw, 1.5rem);
@@ -1337,7 +1339,6 @@ footer>div>h4 {
 /*============================
         ministry overview
 =============================*/
-
 #ministryHero {
     min-height: fit-content;
     background-color: #192434;
@@ -1346,18 +1347,20 @@ footer>div>h4 {
     justify-content: flex-end;
     padding: 3vh 5vw;
 }
-#ministryHero *{
+
+#ministryHero * {
     text-align: center;
 }
+
 #ministryHero h1 {
-    font-size: clamp(4rem, 7.5vw, 9rem);
+    font-size: clamp(2.5rem, 7.5vw, 9rem);
     color: #e8d9b5;
     line-height: 1;
     border-bottom: 1px solid #e8d9b5;
 }
 
 #ministryHero p {
-    font-size: clamp(0.75rem, 0.75vw, 1rem);
+    font-size: clamp(0.65rem, 0.75vw, 1rem);
     color: #e8d9b5;
     opacity: 0.6;
     letter-spacing: 0.08em;
@@ -1404,26 +1407,22 @@ footer>div>h4 {
 }
 
 .ministry-card-body h2 {
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-size: clamp(1.1rem, 2.5vw, 2.5rem);
     color: #e8d9b5;
     line-height: 1.1;
 }
 
 .ministry-card-body p {
-    font-size: clamp(0.65rem, 0.9vw, 0.9rem);
+    font-size: clamp(0.6rem, 0.9vw, 0.9rem);
     color: rgba(232, 217, 181, 0.65);
     letter-spacing: 0.06em;
     padding: 0.5rem 0 0 0;
     margin: 0;
 }
 
-
 /*============================
       Ministry Sub-pages
 =============================*/
-
-/* ---------- Hero ---------- */
-
 .ministrySubHero {
     min-height: 50vh;
     display: flex;
@@ -1440,13 +1439,13 @@ footer>div>h4 {
 }
 
 .ministrySubHero h1 {
-    font-size: clamp(3.5rem, 6vw, 7rem);
+    font-size: clamp(2.5rem, 6vw, 7rem);
     color: #F7FBFC;
     line-height: 1;
 }
 
 .ministrySubHero p {
-    font-size: clamp(0.75rem, 1.1vw, 1rem);
+    font-size: clamp(0.65rem, 1.1vw, 1rem);
     color: rgba(247, 251, 252, 0.6);
     letter-spacing: .08em;
     padding-top: .5vh;
@@ -1455,7 +1454,7 @@ footer>div>h4 {
 .ministryBack {
     font-family: LexendExa_Font;
     font-size: clamp(.65rem, .85vw, .9rem);
-    color: rgba(247,251,252,.7);
+    color: rgba(247, 251, 252, .7);
     text-decoration: none;
     letter-spacing: .08em;
     margin-bottom: auto;
@@ -1472,10 +1471,10 @@ footer>div>h4 {
     padding: 3vh 1vw;
 }
 
-.ministrySubContent h3{
+.ministrySubContent h3 {
     color: #F1ECDB;
     padding: 0vh 3vw;
-    font-size: clamp(1.65rem, 2.85vw, 3.9rem);
+    font-size: clamp(1.25rem, 2.85vw, 3.9rem);
 }
 
 .ministryContact {
@@ -1492,13 +1491,13 @@ footer>div>h4 {
 .ministryContact p {
     max-width: 50ch;
     color: #e8d9b5;
-    font-size: clamp(.75rem,1vw,1rem);
+    font-size: clamp(.75rem, 1vw, 1rem);
     opacity: .8;
 }
 
 .ministryContactBtn {
     font-family: LexendExa_Font;
-    font-size: clamp(.65rem,.9vw,.85rem);
+    font-size: clamp(.65rem, .9vw, .85rem);
     letter-spacing: .1em;
     text-decoration: none;
     color: #192434;
@@ -1516,11 +1515,10 @@ footer>div>h4 {
 /*============================
         Carousel
 =============================*/
-
 .carousel-wrapper {
     display: flex;
     align-items: center;
-    padding-bottom:5vh;
+    padding-bottom: 5vh;
 }
 
 .carousel-viewport {
@@ -1529,6 +1527,7 @@ footer>div>h4 {
     overflow: hidden;
     padding: 2.5vh .5vw;
 }
+
 .carousel-track {
     display: flex;
     gap: 1vw;
@@ -1537,8 +1536,8 @@ footer>div>h4 {
 }
 
 .carousel-arrow {
-    width: clamp(1vw, 2vw, 3vw);
-    height: clamp(1vw, 2vw, 3vw);
+    width: clamp(10px, 2vw, 3vw);
+    height: clamp(10px, 2vw, 3vw);
     flex-shrink: 0;
     cursor: pointer;
     background: transparent;
@@ -1546,19 +1545,19 @@ footer>div>h4 {
     border-width: 0 .45vw .45vw 0;
 }
 
-#nextBtn, #nextBtn1{
+#nextBtn,
+#nextBtn1 {
     transform: rotate(-45deg);
 }
 
-#prevBtn, #prevBtn1 {
+#prevBtn,
+#prevBtn1 {
     transform: rotate(135deg);
 }
-
 
 /*============================
         Cards
 =============================*/
-
 .proj-card {
     width: 18.5vw;
     display: flex;
@@ -1568,18 +1567,18 @@ footer>div>h4 {
     cursor: pointer;
     border-radius: 1vw;
     background: #F7FBFC;
-    border: 1px solid rgba(25,36,52,.2);
+    border: 1px solid rgba(25, 36, 52, .2);
     transition: width .35s, transform .25s, box-shadow .25s;
 }
 
 .proj-card:hover:not(.open) {
     transform: translateY(-4px);
-    box-shadow: 5px 10px 8px rgba(0,0,0,.15);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, .15);
 }
 
 .proj-card.open {
     width: 40vw;
-    box-shadow: 5px 10px 8px rgba(0,0,0,.15);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, .15);
     cursor: default;
 }
 
@@ -1603,7 +1602,7 @@ footer>div>h4 {
     align-items: center;
     background: #3C1B0F;
     color: #F1ECDB;
-    font-size: 2.5vw;
+    font-size: clamp(1rem, 2.5vw, 3rem);
 }
 
 .card-body {
@@ -1615,7 +1614,7 @@ footer>div>h4 {
 
 .card-title {
     font-family: Gloock_Font;
-    font-size: 1.25vw;
+    font-size: clamp(0.75rem, 1.25vw, 1.5rem);
     color: #192434;
     white-space: nowrap;
     overflow: hidden;
@@ -1624,7 +1623,7 @@ footer>div>h4 {
 
 .open .card-title {
     white-space: normal;
-    font-size: 1.5vw;
+    font-size: clamp(0.9rem, 1.5vw, 1.75rem);
 }
 
 .card-detail {
@@ -1645,7 +1644,7 @@ footer>div>h4 {
 
 .card-desc {
     padding: 1vh 0;
-    font-size: 1.15vw;
+    font-size: clamp(0.65rem, 1.15vw, 1.25rem);
     line-height: 1.5;
     color: #192434;
 }
@@ -1655,7 +1654,7 @@ footer>div>h4 {
     padding: 1vh 1vw;
     border-radius: 1vw;
     text-decoration: none;
-    font-size: 1vw;
+    font-size: clamp(0.65rem, 1vw, 1.25rem);
     color: #F1ECDB;
     background: #192434;
 }
@@ -1668,16 +1667,13 @@ footer>div>h4 {
     display: none;
 }
 
-
 /*============================
         abt page  
 =============================*/
-
 .abtPg::before {
     content: "";
     position: fixed;
     inset: 0;
-
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.238), #c9480263), url('../image/church_2.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -1688,14 +1684,14 @@ footer>div>h4 {
     z-index: -1;
 }
 
-#abtMenu *{
+#abtMenu * {
     color: #F7FBFC;
 }
 
 #abtMenu>div:nth-child(1)>h1 {
     text-align: center;
     align-self: self-end;
-    font-size: 10vw;
+    font-size: clamp(3rem, 10vw, 12rem);
 }
 
 #abtMenu>div:nth-child(1)>div {
@@ -1707,7 +1703,7 @@ footer>div>h4 {
 }
 
 #abtMenu>div:nth-child(1) a {
-    font-size: 2vw;
+    font-size: clamp(0.85rem, 2vw, 2.5rem);
     border: solid 5px #F7FBFC;
     border-radius: 3vw;
     min-width: 20vw;
@@ -1715,7 +1711,7 @@ footer>div>h4 {
     background-color: #e8d9b52e;
 }
 
-#abtMenu >div{
+#abtMenu>div {
     min-height: 105vh;
     display: grid;
     grid-template-rows: 3fr 1fr 1fr;
@@ -1723,28 +1719,658 @@ footer>div>h4 {
     place-items: center;
 }
 
-.abtPg section:not(#abtMenu){
+.abtPg section:not(#abtMenu) {
     min-height: 105vh;
     background-color: #e8d9b5;
     border-top: 3px solid #F7FBFC;
 }
 
-
-#abtChurch{
-    background-color: transparent !important; 
-    background-image: linear-gradient(to bottom,transparent , #3c3024c7);
+#abtChurch {
+    background-color: transparent !important;
+    background-image: linear-gradient(to bottom, transparent, #3c3024c7);
     display: grid;
     grid-template-columns: 2fr 3fr;
     grid-template-rows: 1fr;
     padding: 5vh 3vw;
 }
-#abtChurch img{
+
+#abtChurch img {
     max-width: 35vw;
 }
-#abtChurch *{
+
+#abtChurch * {
     text-align: left;
     color: #F7FBFC;
 }
-#abtChurch h1{
-    font-size: clamp(5.6rem, 7.85vw, 8.9rem);
+
+#abtChurch h1 {
+    font-size: clamp(2.5rem, 7.85vw, 8.9rem);
+}
+
+
+/*============================
+        MOBILE — max 768px
+=============================*/
+@media (max-width: 768px) {
+
+    /* --- nav --- */
+    .menuGrid {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        padding: 2vh 3vw;
+        gap: 1vh;
+    }
+
+
+    .menuGrid div:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .menuGrid div:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .menuGrid div:nth-child(2) * {
+        font-size: clamp(0.7rem, 3vw, 1rem);
+    }
+
+    .menuGrid img {
+        max-height: 10vh;
+    }
+
+    #massSchedule>div:nth-of-type(1)>div:nth-child(2),
+    #massSchedule>div:nth-of-type(1)>div:nth-child(3) {
+        display: none;
+    }
+
+    #massSchedule>div:nth-of-type(1)>div:nth-child(1) {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    #massSchedule>div:nth-of-type(1)>div:nth-child(1)>img {
+        max-width: 90vw;
+        width: 100%;
+    }
+
+    #confessionSch>div {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    #confessionSch>div>div:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /* img moves above the dashed box */
+    #confessionSch>div>div:nth-of-type(3) {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+    }
+
+    #confessionSch>div>div:nth-of-type(2) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #confessionSch img {
+        max-width: 80vw;
+    }
+
+    #confessionSch>div>div:nth-of-type(2)>div>p {
+        font-size: clamp(0.9rem, 4vw, 1.25rem);
+    }
+
+    .menuGrid nav {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1vh 0;
+    }
+
+    .menuGrid>nav>button>a {
+        font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+    }
+
+    /* --- footer --- */
+    footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 2rem 5vw;
+        gap: 2rem;
+    }
+
+    footer>.logo {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    footer>div:nth-of-type(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    footer>div:nth-of-type(3) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    footer>div:nth-of-type(4) {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    footer>h6 {
+        grid-column: 1;
+        grid-row: 5;
+        max-width: 100%;
+        font-size: 0.65rem;
+    }
+
+    footer img {
+        width: clamp(50px, 15vw, 80px);
+    }
+
+    footer>div>h4 {
+        font-size: clamp(0.9rem, 4vw, 1.25rem);
+    }
+
+    footer>div>p {
+        font-size: clamp(0.7rem, 3vw, 0.9rem);
+    }
+
+    footer button {
+        font-size: clamp(0.7rem, 3vw, 0.9rem);
+    }
+
+    footer>div {
+        border-bottom: 1px solid rgba(47, 62, 70, 0.2);
+        padding-bottom: 1.5rem;
+    }
+
+    footer>div:nth-of-type(1) {
+        width: 100%;
+        align-items: center;
+        display: grid;
+        justify-items: center;
+    }
+
+    /* --- home --- */
+    #home>div:nth-child(1) {
+        padding: 2vh 0vw;
+    }
+
+    #home>div:nth-child(1)>h1 {
+        font-size: clamp(2.5rem, 14vw, 5rem);
+    }
+
+    #home>div:nth-child(1)>div {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #home>div:nth-child(1) a {
+        font-size: clamp(0.85rem, 4vw, 1.25rem);
+        min-width: 60vw;
+        text-align: center;
+        padding: 1vh 2vw;
+    }
+
+    /* --- mass schedule --- */
+    #massSchedule {
+        grid-template-columns: 1fr;
+        min-height: unset;
+    }
+
+    #massSchedule h1 {
+        grid-column: 1;
+        font-size: clamp(1.5rem, 7vw, 3rem);
+    }
+
+    #massSchedule>div:nth-of-type(1) {
+        grid-column: 1;
+        border-right: none;
+        display: flex;
+        flex-direction: column;
+        padding: 2vh 4vw;
+        gap: 2vh;
+    }
+
+    /* show only first image, hide the rest */
+    #massSchedule>div:nth-of-type(1)>div:nth-child(2),
+    #massSchedule>div:nth-of-type(1)>div:nth-child(3) {
+        display: none;
+    }
+
+    #massSchedule>div:nth-of-type(1)>div:nth-child(1) {
+        width: 100%;
+        order: -1;
+        /* force image to top */
+    }
+
+    #massSchedule>div:nth-of-type(1)>div:nth-child(1)>img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #massSchedule>div:nth-of-type(2) {
+        grid-row: 3;
+        grid-column: 1;
+        padding: 3vh 4vw;
+    }
+
+    #massSchedule h3 {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+        padding-top: 2vh;
+    }
+
+    #massSchedule p {
+        font-size: clamp(0.75rem, 3.5vw, 1rem);
+    }
+
+    #massSchedule #mass>h4 {
+        font-size: clamp(1.25rem, 6vw, 2rem);
+    }
+
+    #massSchedule #mass>h4>small {
+        font-size: clamp(0.65rem, 3vw, 1rem);
+    }
+
+    /* --- holy hour --- */
+    #holyHour>h1 {
+        font-size: clamp(2.5rem, 14vw, 5rem);
+    }
+
+    #holyHour>div {
+        grid-template-columns: 1fr;
+        padding-top: 5vh;
+    }
+
+    #holyHour>div>div {
+        padding: 1vh 0vw;
+    }
+
+    #holyHour>div>div:nth-of-type(2) {
+        border: none;
+        border-top: 5px solid #F7FBFC;
+        border-bottom: 5px solid #F7FBFC;
+    }
+
+    #holyHour>div p {
+        font-size: clamp(0.75rem, 4vw, 1.25rem);
+    }
+
+    #holyHour>div img {
+        width: clamp(25px, 8vw, 50px);
+    }
+
+    /* --- clergy --- */
+    #mainParish {
+        grid-template-columns: 1fr;
+        background-image: none;
+        padding: 4vh 5vw;
+        border-bottom: 2px solid #F7FBFC;
+    }
+
+    #mainParish>div {
+        grid-column: 1;
+    }
+
+    #mainParish h1 {
+        font-size: clamp(2.5rem, 14vw, 5rem);
+    }
+
+    #mainParish h2 {
+        font-size: clamp(1.1rem, 5vw, 1.75rem);
+        padding-top: 3vh;
+    }
+
+    #mainParish p {
+        font-size: clamp(0.7rem, 3.5vw, 1rem);
+    }
+
+    #otherParishPriests {
+        flex-direction: column;
+        align-items: center;
+        gap: 3vh;
+        padding: 4vh 5vw;
+        background-image: none;
+    }
+
+    #priest {
+        min-height: unset;
+    }
+
+    #priest img {
+        max-width: 70vw;
+    }
+
+    #priest>h3 {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    .directoryList {
+        grid-template-columns: 1fr;
+    }
+
+    #officeHours {
+        grid-row: auto;
+        grid-column: 1;
+    }
+
+    .directoryItem h3 {
+        font-size: clamp(0.9rem, 4vw, 1.25rem);
+    }
+
+    .directoryItem p {
+        font-size: clamp(0.7rem, 3vw, 1rem);
+    }
+
+    .officeHoursTable {
+        font-size: clamp(0.65rem, 3vw, 1rem);
+    }
+
+    #officeDirectory h1 {
+        font-size: clamp(1.75rem, 8vw, 3rem);
+    }
+
+    /* --- sacrament menu --- */
+    .sacramentNPastroalMenue {
+        grid-template-columns: 1fr;
+    }
+
+    .sacramentMenue {
+        grid-column: 1;
+        min-height: 60vh;
+        background-size: auto 50%;
+        padding: 4vh 5vw;
+    }
+
+    .pastroalMenue {
+        grid-column: 1;
+        min-height: 60vh;
+        background-size: auto 50%;
+        padding: 4vh 5vw;
+    }
+
+    .sacramentMenue h1,
+    .pastroalMenue h1 {
+        font-size: clamp(2.5rem, 12vw, 5rem);
+    }
+
+    .sacramentMenue p,
+    .pastroalMenue p {
+        font-size: clamp(0.65rem, 3vw, 0.9rem);
+        margin-bottom: 1rem;
+    }
+
+    .sacramentMenue a,
+    .pastroalMenue a {
+        font-size: clamp(0.6rem, 3vw, 0.85rem);
+        padding: 0.5rem 1rem;
+    }
+
+    /* breaker sections */
+    #sacrament,
+    #pastroal {
+        grid-template-columns: 1fr;
+    }
+
+    #sacrament>div:nth-of-type(1),
+    #pastroal>div:nth-of-type(2) {
+        min-height: 30vh;
+        border-radius: 0;
+    }
+
+    #sacrament h3,
+    #pastroal h3 {
+        font-size: clamp(1.1rem, 5vw, 2rem);
+    }
+
+    /* sacrament content sections — single col, img first */
+    .left,
+    .right {
+        grid-template-columns: 1fr;
+    }
+
+    /* image always comes first on mobile */
+    .left>div:nth-of-type(2) {
+        order: -1;
+    }
+
+    .right>div:nth-of-type(1) {
+        order: -1;
+    }
+
+    #confession img,
+    #sick img,
+    #wedding img,
+    #infant img,
+    #rcia img,
+    #house img,
+    #catechism img {
+        width: 80vw;
+    }
+
+    .sacramentpg main>section:not(.sacramentNPastroalMenue) h2 {
+        font-size: clamp(1.75rem, 8vw, 3rem);
+    }
+
+    .sacramentpg main>section:not(.sacramentNPastroalMenue) p {
+        font-size: clamp(0.7rem, 3.5vw, 1rem);
+        padding: 1.5vh 0;
+    }
+
+    #confession h3,
+    #wedding h3,
+    #infant h3,
+    #rcia h3,
+    #house h3,
+    #catechism h3 {
+        font-size: clamp(0.9rem, 5vw, 1.5rem);
+    }
+
+    /* hospital table on mobile — stack cells */
+    #sick {
+        grid-template-columns: 1fr;
+    }
+
+    #sick table {
+        grid-column: 1;
+    }
+
+    #hospitalTable {
+        font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+    }
+
+    #hospitalTable th:first-child,
+    #hospitalTable td:first-child {
+        width: 35%;
+    }
+
+    /* --- donation --- */
+    #donationTop {
+        grid-template-columns: 1fr;
+        min-height: 50vh;
+    }
+
+    #donationTop>h1 {
+        font-size: clamp(2rem, 14vw, 5rem);
+        justify-self: center;
+    }
+
+    #donationTop>p {
+        grid-column: 1;
+    }
+
+    #donationInfo>div>div {
+        grid-template-columns: 1fr;
+    }
+
+    #cash {
+        border-right: none;
+        border-bottom: 3px solid #192434;
+    }
+
+    #donationInfo h1 {
+        font-size: clamp(1.75rem, 8vw, 3rem);
+    }
+
+    #donationInfo h3 {
+        font-size: clamp(1.1rem, 5vw, 2rem);
+    }
+
+    #paynow div>p {
+        font-size: clamp(0.65rem, 3vw, 1rem);
+    }
+
+    /* --- ministry --- */
+    #ministryGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .ministry-card {
+        min-height: 35vh;
+    }
+
+    .ministry-card-body h2 {
+        font-size: clamp(1.1rem, 6vw, 2rem);
+    }
+
+    .ministry-card-body p {
+        font-size: clamp(0.65rem, 3vw, 0.9rem);
+    }
+
+    .ministrySubHero h1 {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+
+    .ministrySubContent h3 {
+        font-size: clamp(1rem, 5vw, 1.75rem);
+    }
+
+    /* carousel on mobile — show fewer cards */
+    .proj-card {
+        width: 72vw;
+        border-radius: 3vw;
+    }
+
+    .proj-card.open {
+        width: 85vw;
+    }
+
+    .card-title {
+        font-size: clamp(0.85rem, 4vw, 1.25rem);
+    }
+
+    .card-desc {
+        font-size: clamp(0.7rem, 3.5vw, 1rem);
+    }
+
+    .card-link {
+        font-size: clamp(0.7rem, 3.5vw, 1rem);
+    }
+
+    .card-thumb,
+    .card-thumb-placeholder {
+        height: 30vh;
+    }
+
+    .carousel-arrow {
+        width: clamp(8px, 3.5vw, 16px);
+        height: clamp(8px, 3.5vw, 16px);
+        border-width: 0 2px 2px 0;
+    }
+
+    /* --- about --- */
+    #abtChurch {
+        grid-template-columns: 1fr;
+    }
+
+    #abtChurch img {
+        max-width: 90vw;
+    }
+
+    #abtChurch h1 {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+
+    #abtMenu>div:nth-child(1)>h1 {
+        font-size: clamp(2.5rem, 14vw, 5rem);
+    }
+
+    #abtMenu>div:nth-child(1)>div {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #abtMenu>div:nth-child(1) a {
+        font-size: clamp(0.85rem, 4vw, 1.25rem);
+        min-width: 60vw;
+    }
+
+    /* contact us*/
+    #contactMenu>div:nth-child(1)>div {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #contactMenu>div:nth-child(1) a {
+        min-width: 60vw;
+        font-size: clamp(0.85rem, 4vw, 1.25rem);
+    }
+
+    #mainParish>div {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mainParish {
+        grid-template-columns: 1fr;
+        min-height: fit-content;
+    }
+
+    #mainPriestPhoto {
+        display: flex;
+        max-height: fit-content;
+        grid-column: 1;
+        padding: 2vh 5vw;
+    }
+
+    #mainPriestPhoto img {
+        max-width: 70vw;
+    }
+}
+
+/* mobile short description (less text on small screens) */
+@media (max-width: 768px) {
+    .mobile-short {
+        display: block;
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-short {
+        display: none;
+    }
+
+    .mobile-hide {
+        display: block;
+    }
 }
